@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1c1c1c; /* dark gray */
+    color: #ffffff; /* white */
+}
+
+nav {
+    background-color: #000000; /* black */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-family: 'FontLogo', sans-serif;
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: normal;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Definizione del font personalizzato */
+@font-face {
+    font-family: 'FontLogo';
+    src: url('fonts/Feeling Passionate.otf') format('woff2'),
+         url('fonts/Feeling Passionate.otf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+section {
+    padding: 100px 20px;
+    margin-top: 60px;
+}
+
+h1 {
+    color: #ffffff;
+    text-align: center;
+}
+
+h2 {
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Animazione fade-in per h1 e h2 */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+}
+
+p {
+    color: #d3d3d3; /* light gray */
+    font-size: 17px;
+    text-align: center;
+    max-width: 750px;
+    line-height: 1.6;
+    margin: 0 auto;
+}
+
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.projects-grid .projectcard {
+    margin: 20px;
+}
+.projectcard {
+    background-color: #2e2e2e; /* Sfondo dark gray */
+    border-radius: 10px; /* Angoli arrotondati */
+    width: 270px; /* Larghezza totale del div */
+    margin: 20px auto; /* Centra il div orizzontalmente e aggiunge margine verticale */
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Effetto fluttuante */
+    text-align: center; /* Centra il testo all'interno */
+}
+
+.projectcard img {
+    width: 100%;
+    max-width: 250px;
+    max-height: 200px;
+    border-radius: 10px; /* Angoli arrotondati per l'immagine */
+    display: block;
+    margin: 0 auto; /* Centra l'immagine */
+}
+
+.projectcard h2 {
+    margin: 15px 0 10px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.projectcard p {
+    color: #d3d3d3;
+    font-size: 16px;
+}
+
+.projectcard img:hover {
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
