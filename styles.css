@@ -94,7 +94,9 @@ p {
 .projects-grid {
     display: flex;
     flex-wrap: wrap;
+    margin: auto;
     justify-content: center;
+    max-width: 1000px;
 }
 
 .projects-grid .projectcard {
@@ -102,7 +104,7 @@ p {
 }
 .projectcard {
     background-color: #2e2e2e; /* Sfondo dark gray */
-    border-radius: 10px; /* Angoli arrotondati */
+    border-radius: 13px; /* Angoli arrotondati */
     width: 270px; /* Larghezza totale del div */
     margin: 20px auto; /* Centra il div orizzontalmente e aggiunge margine verticale */
     padding: 10px;
@@ -127,10 +129,10 @@ p {
 
 .projectcard p {
     color: #d3d3d3;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .projectcard img:hover {
-    opacity: 0.9;
-    transition: opacity 0.3s;
+    opacity: 0.7;
+    transition: opacity 0.1s;
 }
