@@ -1,12 +1,12 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #1c1c1c; /* dark gray */
-    color: #ffffff; /* white */
+    background-color: #1c1c1c; 
+    color: #ffffff; 
 }
 
 nav {
-    background-color: #000000; /* black */
+    background-color: #000000; 
     position: fixed;
     width: 100%;
     top: 0;
@@ -83,7 +83,7 @@ h2 {
 }
 
 p {
-    color: #d3d3d3; /* light gray */
+    color: #d3d3d3; 
     font-size: 17px;
     text-align: center;
     max-width: 750px;
@@ -96,7 +96,7 @@ p {
     flex-wrap: wrap;
     margin: auto;
     justify-content: center;
-    max-width: 1000px;
+    width: 1000px;
 }
 
 .projects-grid .projectcard {
@@ -104,21 +104,21 @@ p {
 }
 .projectcard {
     background-color: #2e2e2e; /* Sfondo dark gray */
-    border-radius: 13px; /* Angoli arrotondati */
-    width: 270px; /* Larghezza totale del div */
-    margin: 20px auto; /* Centra il div orizzontalmente e aggiunge margine verticale */
+    border-radius: 13px; 
+    width: 270px; 
+    margin: 20px auto; 
     padding: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Effetto fluttuante */
-    text-align: center; /* Centra il testo all'interno */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+    text-align: center; 
 }
 
 .projectcard img {
     width: 100%;
     max-width: 250px;
     max-height: 200px;
-    border-radius: 10px; /* Angoli arrotondati per l'immagine */
+    border-radius: 10px; 
     display: block;
-    margin: 0 auto; /* Centra l'immagine */
+    margin: 0 auto; 
 }
 
 .projectcard h2 {
