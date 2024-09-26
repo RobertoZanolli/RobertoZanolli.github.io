@@ -27,7 +27,7 @@ nav {
     font-family: 'FontLogo', sans-serif;
     color: #f5f5f5;
     font-size: 28px;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 nav ul {
@@ -124,7 +124,7 @@ p {
 }
 
 .projectcard img:hover {
-    opacity: 0.9;
+    opacity: 0.7;
 }
 
 .projectcard h2 {
