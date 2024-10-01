@@ -1,4 +1,4 @@
-/* Importiamo il font 'Montserrat' da Google Fonts */
+/* Importo il font 'Montserrat' da Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 body {
@@ -9,7 +9,7 @@ body {
 }
 
 nav {
-    background-color: #1f1f1f; /* Navbar in grigio scuro */
+    background-color: #000000b8; /* Navbar in grigio scuro trasparente */
     position: fixed;
     width: 100%;
     top: 0;
@@ -24,9 +24,9 @@ nav {
 }
 
 .logo {
-    font-family: 'FontLogo', sans-serif;
+    font-family: 'FontLogo', sans-serif; /* Mantiene il font per la logo */
     color: #f5f5f5;
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 500;
 }
 
@@ -50,7 +50,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #bb86fc; 
+    color: #6bff94; /* Verde chiaro brillante per hover sui link della navbar */
 }
 
 @font-face {
@@ -60,13 +60,32 @@ nav a:hover {
     font-style: normal;
 }
 
-section {
-    padding: 120px 20px;
-    margin-top: 70px;
+#social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
 }
 
+.social-icons a {
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    text-decoration: none;
+}
+
+section {
+    padding: 100px 20px;
+    margin-top: 50px;
+}
+
+/* Titoli delle sezioni con verde brillante */
 h1, h2 {
-    color: #f5f5f5;
+    color: #6bff94; /* Verde chiaro brillante per i titoli delle sezioni */
     text-align: center;
     font-weight: 700;
 }
@@ -98,7 +117,7 @@ p {
 }
 
 .projectcard {
-    background-color: #1e1e1e; 
+    background-color: #1e1e1e; /* Grigio scuro per la card */
     border-radius: 15px;
     width: 280px;
     margin: 20px;
@@ -132,11 +151,20 @@ p {
     font-size: 22px;
     color: #f5f5f5;
     font-weight: 600;
-    
 }
-
 
 .projectcard p {
     color: #c7c7c7;
     font-size: 15px;
 }
+.chip {
+    display: inline-block;
+    padding: 1px;
+    height: 15px;
+    font-size: 11px;
+    border-radius: 25px;
+    background-color: transparent;
+    border: 1px solid #6bff94; 
+    color: #6bff94;
+    text-align: center;
+  }
