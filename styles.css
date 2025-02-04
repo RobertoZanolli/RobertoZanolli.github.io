@@ -230,7 +230,12 @@ p {
         line-height: 1.8;
         margin: 0 auto;
     }
-
+    #about{
+        display: flex;
+        flex-direction: column;
+        margin-top: 400px;   
+    
+    }
 
 .projectcard h2 {
     margin: 15px 0 10px;
