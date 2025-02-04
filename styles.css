@@ -1,6 +1,10 @@
 /* Importo il font 'Montserrat' da Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
@@ -18,6 +22,7 @@ nav {
 
 .navbar-container {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
@@ -61,6 +66,7 @@ nav a:hover {
 }
 
 #social-media {
+    margin-top: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,8 +85,15 @@ nav a:hover {
 }
 
 section {
-    padding: 100px 20px;
-    margin-top: 50px;
+    padding: 100px;
+}
+
+#about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;    
+
 }
 
 /* Titoli delle sezioni con verde brillante */
@@ -168,3 +181,66 @@ p {
     color: #6bff94;
     text-align: center;
   }
+
+
+
+
+/* Menu Hamburger */
+.menu-toggle {
+    display: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #6bff94;
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Mostra il bottone del menu */
+        position: absolute;
+        top: 15px;
+        right: 30px;
+    }
+
+    nav ul {
+        display: none; /* Nasconde il menu di default */
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        text-align: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    nav ul.active {
+        display: flex; /* Mostra il menu quando attivo */
+    }
+
+    nav li {
+        margin: 15px 0;
+    }
+
+    p {
+        color: #c7c7c7; 
+        font-size: 16px;
+        text-align: center;
+        max-width: 800px;
+        line-height: 1.8;
+        margin: 0 auto;
+    }
+
+
+.projectcard h2 {
+    margin: 15px 0 10px;
+    font-size: 20px;
+    color: #f5f5f5;
+    font-weight: 600;
+}
+
+.projectcard p {
+    color: #c7c7c7;
+    font-size: 14px;
+}
+}
