@@ -1,8 +1,11 @@
 /* Importo il font 'Montserrat' da Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-* {
-    box-sizing: border-box;
+
+
+footer{
+    background-color: #000000b8;
+    height: 300px;
 }
 
 body {
@@ -85,8 +88,14 @@ nav a:hover {
 }
 
 section {
-    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1100;
+    padding: 0 5% 0 5%;
 }
+
+
 
 #about{
     display: flex;
@@ -230,12 +239,6 @@ p {
         line-height: 1.8;
         margin: 0 auto;
     }
-    #about{
-        display: flex;
-        flex-direction: column;
-        margin-top: 350px;   
-    
-    }
 
 .projectcard h2 {
     margin: 15px 0 10px;
@@ -248,4 +251,11 @@ p {
     color: #c7c7c7;
     font-size: 14px;
 }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    #about {
+        height: auto;
+        padding-top: 80px; /* Assicura spazio sotto la navbar */
+    }
 }
