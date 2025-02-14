@@ -1,7 +1,10 @@
 /* Importo il font 'Montserrat' da Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+* {
+    box-sizing: border-box;
 
+}
 
 footer{
     background-color: #000000b8;
@@ -177,13 +180,13 @@ p {
 
 .projectcard p {
     color: #c7c7c7;
-    font-size: 15px;
+    font-size: 14px;
 }
 .chip {
     display: inline-block;
-    padding: 1px;
+    padding: 2px;
     height: 15px;
-    font-size: 11px;
+    font-size: 10px;
     border-radius: 25px;
     background-color: transparent;
     border: 1px solid #6bff94; 
