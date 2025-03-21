@@ -250,7 +250,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
     color: var(--dark-text);
     font-size: 18px;
-    text-align: center;
+    text-align: justify;
     max-width: 700px;
     line-height: 1.5;
     margin: 0 auto 15px;
