@@ -12,46 +12,32 @@
   <header>
       <nav>
         <div class="navbar-container">
-            <div class="logo">
-                Roberto Zanolli
+            <div class="language-toggle" id="language-toggle">
+                <span class="language-toggle-icon">🇮🇹</span>
             </div>
             <div class="theme-toggle" id="theme-toggle">
                 <span class="theme-toggle-icon">🌙</span>
             </div>
-            <div class="menu-toggle" id="mobile-menu">&#9776;</div>
-            <ul>
-              <li><a href="index.html">About me</a></li>
-              <li><a href="data-projects.html" class="active">Projects</a></li>
-              <li><a href="cv.html">CV</a></li>
-            </ul>
         </div>
     </nav>
   </header>
     
 <main>
   <section id="about" class="page-section">
-    <h1>About <i>Me</i></h1>
+    <h1 data-translate="about_me">About <i>Me</i></h1>
     
     <div class="about-container">
-      <div class="about-content">
-        <p>Ciao sono <b>Roberto</b>, uno studente di informatica per il management appassionato di <b>AI</b> e <b>Data Science</b>.
-        Ho avuto esperienze nell'utilizzo di <b>Python</b> utilizzando strumenti come Pandas, Seaborn e Matplotlib per 
-        interpretare e visualizzare dati complessi e come Scikit-learn e keras per la realizzazione di modelli di machine learning.</p>
+      <div class="about-content intro-highlight">
+        <p class="intro-paragraph" data-translate="intro_paragraph_1">Ciao sono <b>Roberto</b>, uno studente di <em>informatica per il management</em> appassionato di <b>AI</b> e <b><em>Data Science</em></b>.
+        Ho avuto esperienze nell'utilizzo di <b>Python</b> utilizzando strumenti come <em>Pandas</em>, <em>Seaborn</em> e <em>Matplotlib</em> per 
+        interpretare e visualizzare dati complessi e come <em>Scikit-learn</em> e <em>keras</em> per la realizzazione di modelli di <em>machine learning</em>.</p>
         
-        <p>Oltre all'analisi dati, ho conoscenze di programmazione Java, di web development (html, css e js) e di realizzazione di siti web con strumenti no-code come WordPress. 
+        <p class="intro-paragraph" data-translate="intro_paragraph_2">Oltre all'<em>analisi dati</em>, ho conoscenze di programmazione <em>Java</em>, di <em>web development</em> (html, css e js) e di realizzazione di siti web con strumenti no-code come <em>WordPress</em>. 
+        Esplora i miei <a href="data-projects.html" class="intro-link">progetti di data science</a> o dai un'occhiata al mio <a href="cv.html" class="intro-link">curriculum</a>. 
         Sono sempre alla ricerca di nuove sfide e opportunità di crescita.</p>
       </div>
       
-      <div class="about-interests">
-        <h2>Interests</h2>
-        <ul class="chip">
-          <li class="chip">Artificial Intelligence</li>
-          <li class="chip">Data Science</li>
-          <li class="chip">Machine Learning</li>
-          <li class="chip">Web Development</li>
-          <li class="chip">Software Engineering</li>
-        </ul>
-      </div>
+      <!-- Interest chips removed for minimalist design -->
     </div>
     
     <div id="social-media">
@@ -74,6 +60,7 @@
 </main>
     
 <!-- Footer removed as requested -->
+<script src="translations.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
