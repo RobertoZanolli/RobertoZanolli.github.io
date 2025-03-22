@@ -5,11 +5,14 @@ const translations = {
         "theme_toggle": "Cambia tema",
         "language_toggle": "Switch to English",
         
-        // Index page
-        "about_me": "About <i>Me</i>",
-        "intro_paragraph_1": "Ciao, sono <b>Roberto</b>. Sono di <em>Bologna</em> e studio <em>Informatica per il Management</em>. Attualmente lavoro come <b>Full Stack Developer</b>, sviluppando soluzioni <b>AI</b> business-oriented con <em>React</em> e <em>FastAPI</em>.",
-        "intro_paragraph_2": "Dai un'occhiata ai miei <a href=\"data-projects.html\" class=\"intro-link\">progetti</a> o al mio <a href=\"cv.html\" class=\"intro-link\">CV</a>. Sempre alla ricerca di nuove sfide.",
+        // Quotes page
+        "quotes_title": "<i>Citazione</i> del giorno.",
         
+        // Index page
+        "about_me": "<i>Ciao, sono Roberto.</i>",
+        "intro_paragraph_1": "<b>Full Stack Developer</b> da <em>Bologna</em>.<br>Studente di <em>Informatica per il Management</em>.<br>Appassionato di <b>AI</b> e <b><em>Data Science</em></b>.",
+        "intro_paragraph_2": "<a href=\"data-projects.html\" class=\"intro-link\">progetti</a> · <a href=\"cv.html\" class=\"intro-link\">curriculum</a> · <a href=\"quotes.html\" class=\"intro-link\">citazione</a>",
+        "intro_paragraph_3": " Ah e mi piace la <a href=\"https://open.spotify.com/user/dpqcih8kexljvg151hhp1gu6a?si=15008b09cf524c5d\" target=\"_blank\" class=\"intro-link\">musica</a>.",
         // CV page
         "curriculum_vitae": "Curriculum Vitae",
         "education": "Formazione",
@@ -25,10 +28,10 @@ const translations = {
         "programming_languages": "Linguaggi di Programmazione",
         "experience": "Esperienza",
         "internship": "Stage come Sviluppatore Full Stack",
-        "internship_date": "Giugno 2023 - Agosto 2023",
+        "internship_date": "Febbraio 2025 - Presente",
         "internship_company": "LAIF, Bologna",
         "internship_description_1": "Collaborato con un team di data scientist e sviluppatori per creare soluzioni aziendali.",
-        "internship_description_2": "Sviluppato applicazioni web utilizzando Python e il framework FastAPI.",
+        "internship_description_2": "Sviluppato applicazioni web utilizzando React e FastAPI.",
         "internship_description_3": "Integrato modelli di machine learning nelle applicazioni web.",
         "internship_description_4": "Collaborato con team interdisciplinari per realizzare soluzioni di alta qualità.",
         "internship_description_5": "Contribuito allo sviluppo di un chatbot basato su AI per il supporto clienti.",
@@ -45,13 +48,7 @@ const translations = {
         "english_level": "Fluente (C1)",
         "spanish": "Spagnolo",
         "spanish_level": "Base (A2)",
-        "certifications": "Certificazioni",
-        "ml_specialization": "Machine Learning Specialization",
-        "ml_date": "2023",
-        "ml_issuer": "Coursera - Stanford University",
-        "ds_certification": "Certificazione Professionale in Data Science",
-        "ds_date": "2022",
-        "ds_issuer": "IBM via Coursera",
+        "get_in_touch": "contattami",
         "contacts": "Contatti",
         "download_cv": "Scarica CV (PDF)",
         
@@ -72,11 +69,14 @@ const translations = {
         "theme_toggle": "Toggle theme",
         "language_toggle": "Passa all'italiano",
         
-        // Index page
-        "about_me": "About <i>Me</i>",
-        "intro_paragraph_1": "Hi, I'm <b>Roberto</b>. I'm a <em>Computer Science for Management</em> student, based in <em>Bologna</em>. Currently, I work as a <b>Full Stack Developer</b>, building <b>AI</b>-driven business solutions with <em>React</em> and <em>FastAPI</em>.",
-        "intro_paragraph_2": "Check out my <a href=\"data-projects.html\" class=\"intro-link\">projects</a> or my <a href=\"cv.html\" class=\"intro-link\">resume</a>. Always looking for new challenges.",
+        // Quotes page
+        "quotes_title": "<i>Daily</i> quote.",
         
+        // Index page
+        "about_me": "<i>Hi, I'm Roberto.</i>",
+        "intro_paragraph_1": "<b>Full Stack Developer</b> from <em>Bologna</em>.<br>Student of <em>Computer Science for Management</em>.<br>Passionate about <b>AI</b> and <b><em>Data Science</em></b>.",
+        "intro_paragraph_2": "<a href=\"data-projects.html\" class=\"intro-link\">projects</a> · <a href=\"cv.html\" class=\"intro-link\">resume</a> · <a href=\"quotes.html\" class=\"intro-link\">quote</a>",
+        "intro_paragraph_3": " Ah and i like <a href=\"https://open.spotify.com/user/dpqcih8kexljvg151hhp1gu6a?si=15008b09cf524c5d\" target=\"_blank\" class=\"intro-link\">music</a>.",
         // CV page
         "curriculum_vitae": "Curriculum Vitae",
         "education": "Education",
@@ -92,10 +92,10 @@ const translations = {
         "programming_languages": "Programming Languages",
         "experience": "Experience",
         "internship": "Full Stack Developer Internship",
-        "internship_date": "June 2023 - August 2023",
+        "internship_date": "February 2025 - Present",
         "internship_company": "LAIF, Bologna",
         "internship_description_1": "Collaborated with a team of data scientists and developers to create business solutions.",
-        "internship_description_2": "Developed web applications using Python and the FastAPI framework.",
+        "internship_description_2": "Developed web applications using React FastAPI.",
         "internship_description_3": "Integrated machine learning models into web applications.",
         "internship_description_4": "Collaborated with interdisciplinary teams to create high-quality solutions.",
         "internship_description_5": "Contributed to the development of an AI-based chatbot for customer support.",
@@ -112,15 +112,10 @@ const translations = {
         "english_level": "Fluent (C1)",
         "spanish": "Spanish",
         "spanish_level": "Basic (A2)",
-        "certifications": "Certifications",
-        "ml_specialization": "Machine Learning Specialization",
-        "ml_date": "2023",
-        "ml_issuer": "Coursera - Stanford University",
-        "ds_certification": "Professional Certification in Data Science",
-        "ds_date": "2022",
-        "ds_issuer": "IBM via Coursera",
-        "contacts": "Contacts",
-        "download_cv": "Download CV (PDF)",
+        "get_in_touch": "get in touch",
+        
+        "contacts": "Contatti",
+        "download_cv": "Scarica CV (PDF)",
         
         // Data Projects page
         "data_projects_title": "<i>Data Science</i> & <i>Machine Learning</i> Projects",

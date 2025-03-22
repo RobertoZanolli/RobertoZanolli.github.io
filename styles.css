@@ -1,5 +1,5 @@
-/* Import EB Garamond and DM Serif Text fonts */
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=EB+Garamond:wght@400;500;600;700&display=swap');
+/* Import EB Garamond, DM Serif Text, and Playfair Display fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=EB+Garamond:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
 
 :root {
   /* Dark theme */
@@ -38,12 +38,11 @@ body {
 }
 
 nav {
-    background-color: var(--dark-background);
+    background-color: transparent;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-container {
@@ -117,7 +116,7 @@ nav a:hover {
 }
 
 #social-media {
-    margin-top: 40px;
+    margin-top: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,45 +126,43 @@ nav a:hover {
 .social-icons {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    gap: 40px;
 }
 
 .social-icons a {
-    margin: 0 10px;
     text-decoration: none;
     display: flex;
     align-items: center;
 }
 
 .social-icons img {
-    width: 30px;
-    height: 30px;
-    text-decoration: none;
+    width: 24px;
+    height: 24px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
 }
 
 .light-theme .social-icons img {
     filter: brightness(0.2); /* Make icons darker in light theme */
-}
-
-.light-theme .social-link span {
-    color: var(--light-text);
-}
-
-.social-link {
-    display: flex;
-    align-items: center;
-    margin: 0 15px;
-    color: var(--dark-text);
-    text-decoration: none;
-    transition: opacity 0.2s;
-}
-
-.social-link:hover {
     opacity: 0.8;
 }
 
+.social-link.minimal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-text);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link.minimal:hover img {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
 .social-link span {
-    margin-left: 8px;
+    display: none;
 }
 
 /* Home page cards */
@@ -259,6 +256,29 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 15px;
 }
 
+.name-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+    letter-spacing: 1px;
+    font-weight: 100;
+    color: var(--dark-text);
+    line-height: 0.9;
+    text-align: left;
+}
+
+.name-title .name {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.75em;
+    letter-spacing: 0.5px;
+}
+
+
+.light-theme .name-title {
+    color: var(--light-primary);
+}
+
 .page-section h2 {
     font-size: 20px;
     margin-bottom: 25px;
@@ -276,63 +296,67 @@ p {
     font-family: 'EB Garamond', serif;
 }
 
-.projects-grid {
+.projects-list {
     display: flex;
     flex-direction: column;
     margin: auto;
-    width: 100%;
+    width: 70%;
+    max-width: 700px;
     gap: 20px;
-    padding: 0 15px;
+    padding: 0;
 }
 
-.projectcard {
-    background-color: var(--dark-card);
+.project-item {
+    border-bottom: 1px solid var(--dark-border);
+    padding: 20px 15px;
+    transition: all 0.2s ease;
     border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
-    margin-bottom: 20px;
-    border-left: 4px solid var(--dark-primary);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    width: 100%;
-    display: flex;
-    flex-direction: column;
 }
 
-.projectcard h3 {
+.project-item:last-child {
+    border-bottom: none;
+}
+
+.project-item:hover {
+    opacity: 0.9;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.project-item h2 {
     color: var(--dark-text);
     margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 20px;
+    text-align: left;
+    font-weight: 600;
 }
 
-.projectcard p {
-    font-size: 13px;
-    line-height: 1.1;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    flex-grow: 1;
+.project-item h2 a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
-.projectcard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+.project-item h2 a:hover {
+    color: var(--dark-primary);
 }
 
-.projectcard img {
-    width: 100%;
-    max-height: 250px;
-    object-fit: cover;
-    border-radius: 8px;
-    display: block;
-    margin: 0 auto 12px;
-    position: relative;
-    filter: grayscale(100%)  /* Adding a dark overlay effect to images */
+.light-theme .project-item h2 a:hover {
+    color: var(--light-primary);
+}
+
+.project-item p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: left;
+    color: var(--dark-text);
+    opacity: 0.9;
 }
 
 .chip-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 6px 0;
-    gap: 4px;
+    display: none; /* Hide chip container for minimal design */
 }
 
 /* Interest chips removed for minimalist design */
@@ -372,6 +396,51 @@ p {
     color: #555555;
 }
 
+/* Quotes Page Styles */
+.quotes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.quote-box {
+    background-color: var(--dark-card);
+    border-radius: 5px;
+    padding: 30px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.light-theme .quote-box {
+    background-color: var(--light-card);
+}
+
+.quote-text {
+    font-family: 'DM Serif Text', serif;
+    font-size: 22px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: center;
+    font-style: italic;
+}
+
+.quote-author {
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
+    text-align: right;
+    color: var(--dark-primary);
+}
+
+.light-theme .quote-author {
+    color: var(--light-primary);
+}
+
 /* Theme and Language Toggle Buttons */
 .theme-toggle, .language-toggle {
     display: flex;
@@ -394,10 +463,8 @@ p {
     font-size: 20px;
 }
 
-/* Menu Hamburger */
 /* Menu toggle removed for minimalist design */
 
-/* Mobile */
 /* CV Page Styles */
 .cv-container {
     max-width: 800px;
@@ -634,34 +701,47 @@ p {
 
 /* About Page Styles */
 .about-container {
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.intro-highlight {
-    border-left: 3px solid var(--dark-primary);
-    padding-left: 20px;
-    margin-bottom: 30px;
+.about-content {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.name-title {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-family: 'Playfair Display', serif;
 }
 
 .intro-paragraph {
-    line-height: 1.6;
-    letter-spacing: 0.3px;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.5rem;
 }
 
-.intro-paragraph:first-of-type {
-    font-size: 22px;
+.intro-paragraph.primary {
+    font-size: 1.8rem;
+    margin-bottom: 1.1rem;
 }
 
-.intro-paragraph:nth-of-type(2) {
-    font-size: 19px;
+.intro-paragraph.secondary {
+    font-size: 1.1rem;
+    opacity: 0.9;
 }
-
-.intro-paragraph:nth-of-type(3) {
-    font-size: 17px;
+.intro-paragraph.ter {
+    font-size: 1.4rem;
+    opacity: 0.9;
 }
-
 .intro-paragraph em {
     font-style: italic;
     color: var(--dark-primary);
@@ -673,15 +753,45 @@ p {
 
 .intro-link {
     color: var(--dark-primary);
-    text-decoration: none;
-    font-weight: 600;
-    border-bottom: 1px dotted var(--dark-primary);
-    transition: all 0.2s ease;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0 2px;
+    opacity: 1;
 }
 
 .intro-link:hover {
     color: var(--dark-accent);
-    border-bottom: 1px solid var(--dark-accent);
+}
+
+.intro-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--dark-accent);
+    transition: width 0.3s ease;
+}
+
+.intro-link:hover::after {
+    width: 100%;
+}
+
+.light-theme .intro-link {
+    color: var(--light-primary);
+    text-decoration: underline;
+    opacity: 1;
+}
+
+.light-theme .intro-link:hover {
+    color: var(--light-accent);
+}
+
+.light-theme .intro-link::after {
+    background-color: var(--light-accent);
 }
 
 /* About interests section removed for minimalist design */
@@ -762,29 +872,26 @@ p {
         padding-top: 80px;
     }
     
-    .projectcard {
-        background-color: var(--dark-card);
-        border-radius: 8px;
-        padding: 15px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
-        transition: transform 0.3s, box-shadow 0.3s;
-        border-left: 4px solid var(--dark-primary);
-        margin: 0 0 15px 0;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
+    .projects-list {
+        width: 95%;
+        gap: 15px;
     }
     
-    .projectcard h2 {
+    .project-item {
+        padding: 15px 10px;
+    }
+    
+    .project-item h2 {
         font-size: 16px;
-        margin-top: 10px;
         margin-bottom: 8px;
         font-family: 'EB Garamond', serif;
         font-weight: 600;
     }
     
-    .projectcard p {
-        font-size: 12px;
+    .project-item p {
+        font-size: 13px;
+        margin-bottom: 12px;
+        line-height: 1.4;
     }
     
     .chip {
@@ -804,12 +911,6 @@ p {
     
     .about-interests ul.chip {
         gap: 8px;
-    }
-    
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 0 10px;
     }
     
     .navbar-container {
@@ -845,8 +946,7 @@ p {
 }
 
 .light-theme nav {
-    background-color: var(--light-background);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: transparent;
 }
 
 .light-theme .logo,
@@ -868,33 +968,30 @@ p {
     color: var(--light-text);
 }
 
-.light-theme .projectcard {
-    background-color: var(--light-card);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
-    width: 100%;
-    padding: 20px;
-    border-left: 4px solid var(--light-primary);
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
+.light-theme .project-item {
+    border-bottom: 1px solid var(--light-border);
 }
 
-.light-theme .projectcard:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+.light-theme .project-item:hover {
+    background-color: rgba(165, 155, 132, 0.05);
+}
+
+.light-theme .project-item:last-child {
+    border-bottom: none;
 }
 
 .btn-github {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 5px;
     padding: 8px 16px;
-    background-color: var(--light-accent);
-    color: var(--light-background);
+    background-color: var(--dark-accent);
+    color: var(--dark-background);
     text-decoration: none;
     border-radius: 4px;
     font-weight: 500;
     font-family: 'EB Garamond', serif;
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 0.5px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
@@ -1046,8 +1143,6 @@ p {
     p {
         font-size: 16px;
     }
-    
-    /* Mobile menu toggle and navigation removed for minimalist design */
     
     .theme-toggle {
         margin-right: 0;
