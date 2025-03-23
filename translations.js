@@ -11,7 +11,7 @@ const translations = {
         // Index page
         "about_me": "<i>Ciao, sono Roberto.</i>",
         "intro_paragraph_1": "<b>Full Stack Developer</b> da <em>Bologna</em>.<br>Studente di <em>Informatica per il Management</em>.<br>Appassionato di <b>AI</b> e <b><em>Data Science</em></b>.",
-        "intro_paragraph_2": "<a href=\"data-projects.html\" class=\"intro-link\">progetti</a> · <a href=\"cv.html\" class=\"intro-link\">curriculum</a> · <a href=\"quotes.html\" class=\"intro-link\">citazione</a>",
+        "intro_paragraph_2": "<a href=\"data-projects.html\" class=\"intro-link\">progetti</a> · <a href=\"cv.html\" class=\"intro-link\">curriculum</a> · <a href=\"quotes.html\" class=\"intro-link\">citazione</a> · <a href=\"https://www.linkedin.com/in/roberto-zanolli-2003-bo/\" class=\"intro-link\">contattami</a>",
         "intro_paragraph_3": " Ah e mi piace la <a href=\"https://open.spotify.com/user/dpqcih8kexljvg151hhp1gu6a?si=15008b09cf524c5d\" target=\"_blank\" class=\"intro-link\">musica</a>.",
         // CV page
         "curriculum_vitae": "Curriculum Vitae",
@@ -48,7 +48,7 @@ const translations = {
         "english_level": "Fluente (C1)",
         "spanish": "Spagnolo",
         "spanish_level": "Base (A2)",
-        "get_in_touch": "contattami",
+
         "contacts": "Contatti",
         "download_cv": "Scarica CV (PDF)",
         
@@ -75,7 +75,7 @@ const translations = {
         // Index page
         "about_me": "<i>Hi, I'm Roberto.</i>",
         "intro_paragraph_1": "<b>Full Stack Developer</b> from <em>Bologna</em>.<br>Student of <em>Computer Science for Management</em>.<br>Passionate about <b>AI</b> and <b><em>Data Science</em></b>.",
-        "intro_paragraph_2": "<a href=\"data-projects.html\" class=\"intro-link\">projects</a> · <a href=\"cv.html\" class=\"intro-link\">resume</a> · <a href=\"quotes.html\" class=\"intro-link\">quote</a>",
+        "intro_paragraph_2": "<a href=\"data-projects.html\" class=\"intro-link\">projects</a> · <a href=\"cv.html\" class=\"intro-link\">resume</a> · <a href=\"quotes.html\" class=\"intro-link\">quote</a> · <a href=\"https://www.linkedin.com/in/roberto-zanolli-2003-bo/\" class=\"intro-link\">get in touch</a>",
         "intro_paragraph_3": " Ah and i like <a href=\"https://open.spotify.com/user/dpqcih8kexljvg151hhp1gu6a?si=15008b09cf524c5d\" target=\"_blank\" class=\"intro-link\">music</a>.",
         // CV page
         "curriculum_vitae": "Curriculum Vitae",
@@ -112,7 +112,7 @@ const translations = {
         "english_level": "Fluent (C1)",
         "spanish": "Spanish",
         "spanish_level": "Basic (A2)",
-        "get_in_touch": "get in touch",
+        
         
         "contacts": "Contatti",
         "download_cv": "Scarica CV (PDF)",
