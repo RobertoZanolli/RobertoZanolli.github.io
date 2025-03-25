@@ -730,17 +730,20 @@ p {
 }
 
 .intro-paragraph.primary {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     margin-bottom: 1.1rem;
+    text-align: left;
 }
 
 .intro-paragraph.secondary {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     opacity: 0.9;
+    text-align: left;
 }
 .intro-paragraph.ter {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     opacity: 0.9;
+    text-align: left;
 }
 .intro-paragraph em {
     font-style: italic;
