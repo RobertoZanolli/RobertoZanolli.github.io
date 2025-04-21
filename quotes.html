@@ -1,157 +1,44 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roberto Zanolli - Quotes</title>
+    <title>Quotes - Roberto Zanolli</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-  <header>
-      <nav>
-        <div class="navbar-container">
-            <a href="index.html" class="back-arrow">
-                <i class="fas fa-arrow-left"></i>
-            </a>
-            <div class="language-toggle" id="language-toggle">
-                <span class="language-toggle-icon">🇮🇹</span>
-            </div>
-            <div class="theme-toggle" id="theme-toggle">
-                <span class="theme-toggle-icon">🌙</span>
-            </div>
+
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+
+    <main>
+        <nav>
+            <a href="index.html">home</a>
+            <a href="data-projects.html">work</a>
+            <a href="quotes.html">quotes</a>
+            <a href="https://www.linkedin.com/in/roberto-zanolli-2003-bo/" target="_blank" rel="noopener noreferrer">linkedin</a>
+            <a href="https://github.com/RobertoZanolli" target="_blank" rel="noopener noreferrer">github</a>
+            <!-- Removed mail link -->
+        </nav>
+
+        <h1>Quotes</h1>
+        <p>a daily quote to keep you motivated.</p>
+
+        <div id="quotes-container">
+            <!-- Quotes will be loaded here by script.js -->
+            <p>Loading quotes...</p> 
         </div>
-    </nav>
-  </header>
-    
-<main>
-  <section id="quotes" class="page-section">
-    <h1 data-translate="quotes_title"><i>Daily</i> Quotes</h1>
-    
-    <div class="quotes-container">
-      <div id="quote-box" class="quote-box">
-        <p id="quote-text" class="quote-text">Loading quote...</p>
-        <p id="quote-author" class="quote-author"></p>
-      </div>
-    </div>
-  </section>
-</main>
-    
-<!-- Footer removed as requested -->
-<script src="translations.js"></script>
-<script src="script.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const quoteText = document.getElementById("quote-text");
-    const quoteAuthor = document.getElementById("quote-author");
-    
-    // API URL for ZenQuotes with CORS proxy
-    const apiUrl = "https://cors-anywhere.herokuapp.com/https://zenquotes.io/api/random";
-    
-    // Fallback quotes in case the API is unavailable
-    const fallbackQuotes = [
-      { q: "The only way to do great work is to love what you do.", a: "Steve Jobs" },
-      { q: "Life is what happens when you're busy making other plans.", a: "John Lennon" },
-      { q: "The future belongs to those who believe in the beauty of their dreams.", a: "Eleanor Roosevelt" },
-      { q: "In the middle of difficulty lies opportunity.", a: "Albert Einstein" },
-      { q: "Success is not final, failure is not fatal: It is the courage to continue that counts.", a: "Winston Churchill" },
-      { q: "The best way to predict the future is to create it.", a: "Peter Drucker" },
-      { q: "Believe you can and you're halfway there.", a: "Theodore Roosevelt" },
-      { q: "It does not matter how slowly you go as long as you do not stop.", a: "Confucius" },
-      { q: "Everything you've ever wanted is on the other side of fear.", a: "George Addair" },
-      { q: "The only limit to our realization of tomorrow is our doubts of today.", a: "Franklin D. Roosevelt" }
-    ];
-    
-    // Function to get a random fallback quote
-    function getRandomFallbackQuote() {
-      const randomIndex = Math.floor(Math.random() * fallbackQuotes.length);
-      return fallbackQuotes[randomIndex];
-    }
-    
-    // Function to check if we need a new quote today
-    function needNewQuoteToday() {
-      const today = new Date().toLocaleDateString();
-      const lastQuoteDate = localStorage.getItem('lastQuoteDate');
-      
-      return lastQuoteDate !== today;
-    }
-    
-    // Function to save quote to localStorage
-    function saveQuoteToLocalStorage(quote) {
-      const today = new Date().toLocaleDateString();
-      localStorage.setItem('lastQuoteDate', today);
-      localStorage.setItem('dailyQuote', JSON.stringify(quote));
-    }
-    
-    // Function to get saved quote from localStorage
-    function getSavedQuote() {
-      const savedQuote = localStorage.getItem('dailyQuote');
-      return savedQuote ? JSON.parse(savedQuote) : null;
-    }
-    
-    // Function to display a quote
-    function displayQuote(quote) {
-      quoteText.textContent = `"${quote.q}"`;
-      quoteAuthor.textContent = `— ${quote.a}`;
-    }
-    
-    // Function to fetch a new quote
-    async function getQuote() {
-      try {
-        quoteText.textContent = "Loading quote...";
-        quoteAuthor.textContent = "";
         
-        // Set a timeout for the fetch request
-        const timeoutPromise = new Promise((_, reject) => {
-          setTimeout(() => reject(new Error('Request timed out')), 5000);
-        });
-        
-        // Try to fetch from API with timeout
-        const response = await Promise.race([
-          fetch(apiUrl),
-          timeoutPromise
-        ]);
-        
-        const data = await response.json();
-        
-        let quote;
-        if (data && data.length > 0) {
-          quote = data[0];
-        } else {
-          // Use fallback quote if API returns empty data
-          quote = getRandomFallbackQuote();
-        }
-        
-        // Save and display the quote
-        saveQuoteToLocalStorage(quote);
-        displayQuote(quote);
-      } catch (error) {
-        console.error("Error fetching quote:", error);
-        
-        // Use fallback quote if API request fails
-        const quote = getRandomFallbackQuote();
-        saveQuoteToLocalStorage(quote);
-        displayQuote(quote);
-      }
-    }
-    
-    // Main logic - check if we need a new quote today
-    if (needNewQuoteToday()) {
-      // It's a new day, get a new quote
-      getQuote();
-    } else {
-      // Use the saved quote from today
-      const savedQuote = getSavedQuote();
-      if (savedQuote) {
-        displayQuote(savedQuote);
-      } else {
-        // Fallback if something went wrong with localStorage
-        getQuote();
-      }
-    }
-  });
-</script>
+        <!-- Attribution required by ZenQuotes free API -->
+        <p class="attribution">Inspirational quotes provided by <a href="https://zenquotes.io/" target="_blank" rel="noopener noreferrer">ZenQuotes API</a></p>
+
+    </main>
+
+    <footer>
+        &copy; 2025 Roberto Zanolli
+    </footer>
+
+    <script src="script.js"></script>
+
 </body>
 </html>

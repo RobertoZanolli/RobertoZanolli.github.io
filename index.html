@@ -1,49 +1,26 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roberto Zanolli - Portfolio</title>
+    <title>Roberto Zanolli</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="styles.css">
 </head>
-
-<body>
-  <header>
-      <nav>
-        <div class="navbar-container">
-            <div class="language-toggle" id="language-toggle">
-                <span class="language-toggle-icon">🇮🇹</span>
-            </div>
-            <div class="theme-toggle" id="theme-toggle">
-                <span class="theme-toggle-icon">🌙</span>
-            </div>
+<body class="homepage">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    <main>
+        <div class="centered">
+            <h1>roberto zanolli</h1>
+            <p class="subtitle">full stack developer · bologna</p>
+            <nav>
+                <a href="data-projects.html">work</a>
+                <a href="quotes.html">quotes</a>
+                <a href="https://www.linkedin.com/in/roberto-zanolli-2003-bo/" target="_blank" rel="noopener noreferrer">linkedin</a>
+                <a href="https://github.com/RobertoZanolli" target="_blank" rel="noopener noreferrer">github</a>
+            </nav>
         </div>
-    </nav>
-  </header>
-    
-<main>
-  <section id="about" class="page-section">
-    <div class="about-container">
-      <div class="about-content">
-        <h1 class="name-title" data-translate="about_me">Hi, I'm <span class="name">Roberto Zanolli</span></h1>
-        <p class="intro-paragraph primary" data-translate="intro_paragraph_1">Full Stack Developer da Bologna.<br>Studente di Informatica per il Management.<br>Appassionato di AI e Data Science.</p>
-        <p class="intro-paragraph ter" data-translate="intro_paragraph_3"></p>
-        <p class="intro-paragraph secondary" data-translate="intro_paragraph_2">
-            progetti · curriculum · <a href="quotes.html" class="intro-link" data-translate="quotes">citazioni</a>  · 
-            <a href="https://www.linkedin.com/in/roberto-zanolli-2003-bo/" class="intro-link" data-translate="get_in_touch">contattami</a>
-        </p>
-        
-            
-      </div>
-    </div>
-    
-    <!-- Social media icons removed and integrated into intro paragraph -->
-  </section>
-</main>
-    
-<!-- Footer removed as requested -->
-<script src="translations.js"></script>
-<script src="script.js"></script>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>

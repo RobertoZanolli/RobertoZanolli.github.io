@@ -1,91 +1,66 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en"> <!-- Changed lang to en -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roberto Zanolli - Data Projects</title>
+    <title>Projects - Roberto Zanolli</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-  <header>
-      <nav>
-        <div class="navbar-container">
-            <a href="index.html" class="back-arrow">
-                <i class="fas fa-arrow-left"></i>
-            </a>
-            <div class="language-toggle" id="language-toggle">
-                <span class="language-toggle-icon">🇮🇹</span>
+
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button> <!-- Theme Toggle -->
+
+    <main>
+        <nav>
+            <a href="index.html">home</a>
+            <a href="data-projects.html">work</a>
+            <a href="quotes.html">quotes</a>
+            <a href="https://www.linkedin.com/in/roberto-zanolli-2003-bo/" target="_blank" rel="noopener noreferrer">linkedin</a>
+            <a href="https://github.com/RobertoZanolli" target="_blank" rel="noopener noreferrer">github</a>
+        </nav>
+
+        <h1>Work</h1>
+        <p>a selection of projects. </p>  
+      
+
+        <div class="projects-container">
+            <!-- Project 1: Image Unmixing -->
+            <div class="project-card">
+                <h3>Hyperspectral Image Unmixing</h3>
+                <p>CNN-based autoencoder for improved hyperspectral image unmixing using TensorFlow and Keras.</p>
+                <a href="https://github.com/RobertoZanolli/Image-Unmixing-via-CNN-Autoencoder" target="_blank" rel="noopener noreferrer">View on GitHub</a>
             </div>
-            <div class="theme-toggle" id="theme-toggle">
-                <span class="theme-toggle-icon">🌙</span>
+
+            <!-- Project 2: Corporate Analysis -->
+            <div class="project-card">
+                <h3>European Sales Study</h3>
+                <p>Interactive Power BI dashboard analyzing European sales data with regional insights.</p>
+                <a href="https://github.com/RobertoZanolli/Corporate-Analysis-Dashboard" target="_blank" rel="noopener noreferrer">View on GitHub</a>
             </div>
-        </div>
-    </nav>
-  </header>
-    
-<main>
-  <section id="data-projects" class="page-section">
-    <h1 data-translate="data_projects_title"><i>Data Science</i> & <i>Machine Learning</i> Projects</h1>
 
-    
-    <div class="projects-list">
-        <div class="project-item">
-            <h2><a href="https://github.com/RobertoZanolli/Heart-Disease-Classification---University-Project-2023-2024" target="_blank" data-translate="heart_disease_title">Heart Disease Classification</a></h2>
-            <p data-translate="heart_disease_description">Semplice modello di classificazione binaria per prevedere l'insorgenza di un attacco cardiaco.</p>
-        </div>
+            <!-- Project 3: Heart Disease Analysis -->
+            <div class="project-card">
+                <h3>Heart Disease Prediction</h3>
+                <p>ML model predicting heart disease risk using Logistic Regression, SVM, and Random Forest.</p>
+                <a href="https://github.com/RobertoZanolli/Heart-Disease-Classification" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+            </div>
 
-        <div class="project-item">
-            <h2><a href="https://github.com/RobertoZanolli/image-unmixing-cnn" target="_blank" data-translate="image_unmixing_title">Separazione di immagini con CNN</a></h2>
-            <p data-translate="image_unmixing_description">Separazione di immagini sovrapposte mediante una CNN basata su encoder-decoder.</p>
-        </div>
+            <!-- Project 4: Salary Analysis -->
+            <div class="project-card">
+                <h3>Global Salary Analysis</h3>
+                <p>Python analysis of global data science compensation trends across regions and industries.</p>
+                <a href="https://github.com/RobertoZanolli/Data-Science-Salary-Analysis" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+            </div>
 
-        <div class="project-item">
-            <h2><a href="https://github.com/RobertoZanolli/European-corporates-sales-analysis" target="_blank" data-translate="sales_analysis_title">European corporates sales analysis</a></h2>
-            <p data-translate="sales_analysis_description">Analisi delle vendite di una azienda fittizia con clienti europei. Il dataset è stato generato randomicamente.</p>
-        </div>
+        </div> <!-- End projects-container -->
+    </main>
 
-        <div class="project-item">
-            <h2><a href="https://github.com/RobertoZanolli/Mushroom-Classification" target="_blank" data-translate="mushroom_title">Mushroom Classification</a></h2>
-            <p data-translate="mushroom_description">Semplice modello di classificazione binaria per prevedere se un fungo e' commestibile o meno.</p>
-        </div>
+    <footer>
+        &copy; 2025 Roberto Zanolli
+    </footer>
 
-        <div class="project-item">
-            <h2><a href="https://github.com/RobertoZanolli/Global-Salary-Analysis" target="_blank" data-translate="salary_analysis_title">Global Salary Analysis</a></h2>
-            <p data-translate="salary_analysis_description">Notebook che cerca di trarre informazioni utili sulla distribuzione salariale globale.</p>
-        </div>
+    <script src="script.js"></script> <!-- Keep main script -->
 
-        <div class="project-item">
-            <h2><a href="https://github.com/RobertoZanolli/Scraping-Google-Images-with-MSoup" target="_blank" data-translate="scraping_title">Scraping di immagini con MechanicalSoup</a></h2>
-            <p data-translate="scraping_description">Notebook contenente uno script che effettua lo scraping da google immagini con MechanicalSoup data una query.</p>
-        </div>
-    </div>
-  </section>
-  <section id="coding-projects" class="page-section">
-    <h1 data-translate="coding_projects_title"><i>Coding</i> Projects</h1>
-
-    
-    <div class="projects-list">
-        <div class="project-item">
-            <h2><a href="https://github.com/RobertoZanolli/DSA-2023-2024-ROBERTO-ZANOLLI" target="_blank" data-translate="dsa_title">DSA 2023/2024 <br> (Progetto Universitario)</a></h2>
-            <p data-translate="dsa_description">Progetto per l'esame di algoritmi e strutture dati.</p>
-        </div>
-
-        <div class="project-item">
-            <h2><a href="https://github.com/RobertoZanolli/GraphiteCalculator" target="_blank" data-translate="calculator_title">GraphiteCalculator</a></h2>
-            <p data-translate="calculator_description">Semplice calcolatrice realizzata con JavaFX (+Maven).
-                <br> Nelle release è presente il jar eseguibile multipiattaforma.
-            </p>
-        </div>
-    </div>
-  </section>
-</main>
-    
-<!-- Footer removed as requested -->
-<script src="translations.js"></script>
-<script src="script.js"></script>
-<script src="github-api.js"></script>
 </body>
 </html>
