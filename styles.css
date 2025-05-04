@@ -48,26 +48,77 @@ main {
 
 /* Homepage specific centering */
 body.homepage main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 1rem; /* Reset padding for homepage */
-  max-width: none; /* Remove max-width for homepage */
+    display: flex;
+    align-items: center;       /* Vertically center */
+    justify-content: center;   /* Horizontally center */
+    min-height: 100vh;
+    padding: 0;
+    max-width: none;
+    text-align: left;
+    background: none;
+}
+
+.intro-block {
+    margin-top: 0;      /* Increase distance from left */
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 2.2em;
+    justify-content: center;
+    min-height: 100vh;         /* Vertically center */
+}
+
+.intro-block h1 {
+    margin: 0 0 0.7em 0;
+    font-size: 1.1rem;        /* Decrease text size */
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.intro-block .intro {
+    color: var(--secondary-text-color);
+    font-size: 0.92rem;        /* Decrease text size */
+    margin: 0 0 1.5em 0;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.intro-block nav {
+    display: flex;
+    gap: 1.2em;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-start;
+}
+
+@media (max-width: 700px) {
+    .intro-block {
+        margin-left: 5vw;
+        margin-top: 0;
+        max-width: 95vw;
+        min-height: 90vh;
+    }
+    .intro-block h1 {
+        font-size: 1.1rem;
+    }
+    .intro-block .intro {
+        font-size: 0.88rem;
+    }
 }
 
 h1, h2, h3 {
   color: var(--text-color);
   margin-top: 1.5em;
-  margin-bottom: 0.8em;
   font-weight: 700;
   letter-spacing: -0.5px;
 }
 
 h1 {
-  font-size: 2.2rem; /* Slightly smaller H1 */
+  font-size: 2.1rem; /* Slightly smaller H1 */
   text-transform: lowercase;
   margin-top: 0;
+  margin-bottom: -0.1em;
 }
 
 h2 {
@@ -81,7 +132,7 @@ p {
 .subtitle {
   font-size: 1.1rem;
   color: var(--secondary-text-color);
-  margin-bottom: 2em;
+  margin-bottom: 0.5em;
   font-weight: 400;
   letter-spacing: 0.5px;
 }
@@ -91,7 +142,7 @@ nav {
   flex-wrap: wrap;
   gap: 1.5em;
   justify-content: center; /* Center nav items on homepage */
-  margin-bottom: 2em; /* Add margin below nav on other pages */
+  margin-top: 2em; /* Add margin below nav on other pages */
 }
 
 /* Adjust nav alignment for non-homepage */
