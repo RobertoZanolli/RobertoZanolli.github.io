@@ -37,6 +37,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // --- Slider Handling ---
+    const sliderContainer = document.querySelector('.slider-container');
+    if (sliderContainer) {
+        const slider = sliderContainer.querySelector('.slider');
+        const slides = sliderContainer.querySelectorAll('.slide');
+        const prevBtn = sliderContainer.querySelector('.prev');
+        const nextBtn = sliderContainer.querySelector('.next');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            slider.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+            showSlide(currentIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+            showSlide(currentIndex);
+        });
+
+        // Initialize slider
+        showSlide(currentIndex);
+    }
+
     // --- Quotes Handling (only on quotes page) --- 
     const quotesContainer = document.getElementById('quotes-container');
     if (quotesContainer) {
@@ -83,8 +110,6 @@ async function fetchAndDisplayQuotes() {
         
         // Try with API first, then fallback to local quotes
         try {
-            // Using the official API format as per documentation
-            // We're using random endpoint as it has best compatibility with free tier
             const apiUrl = 'https://zenquotes.io/api/random';
             
             const response = await fetch(apiUrl);
@@ -107,7 +132,6 @@ async function fetchAndDisplayQuotes() {
         } catch (error) {
             console.error("Error fetching quotes:", error);
             
-            // Use a random fallback quote
             const fallbackQuote = getRandomFallbackQuote();
             console.log("Using fallback quote:", fallbackQuote);
             
