@@ -1,0 +1,14 @@
+baseURL = 'https://robertozanolli.github.io'
+languageCode = 'en-us'
+title = 'what i learned today'
+theme = 'custom'
+publishDir = '../blog'
+
+[params]
+  description = "things I learn as a software engineer"
+
+[markup]
+  [markup.highlight]
+    style = 'monokai'
+    lineNos = false
+    lineNumbersInTable = false

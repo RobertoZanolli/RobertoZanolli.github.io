@@ -1,0 +1,27 @@
+{{ define "title" }}{{ .Title }} - {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<article class="blog-post">
+    <header class="post-header">
+        <h1>{{ .Title }}</h1>
+        <p class="post-meta">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+            {{ if .Params.tags }}
+            <span class="post-tags">
+                {{ range .Params.tags }}
+                <span class="tag">{{ . }}</span>
+                {{ end }}
+            </span>
+            {{ end }}
+        </p>
+    </header>
+    
+    <div class="post-content">
+        {{ .Content }}
+    </div>
+</article>
+
+<div style="margin-top: 3em; padding-top: 2em; border-top: 1px solid var(--border-color);">
+    <a href="/blog/">← back to blog</a>
+</div>
+{{ end }}

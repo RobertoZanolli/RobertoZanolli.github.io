@@ -1,0 +1,8 @@
+name = "Custom"
+license = "MIT"
+description = "Custom theme matching the main site design"
+homepage = "https://robertozanolli.github.io"
+min_version = "0.101.0"
+
+[author]
+  name = "Roberto Zanolli"
