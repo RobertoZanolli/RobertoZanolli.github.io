@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on what i learned today</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on what i learned today</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 19 Oct 2025 00:09:04 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>how do i feel?</title>
+      <link>http://localhost:1313/posts/random%231/</link>
+      <pubDate>Sun, 19 Oct 2025 00:09:04 +0200</pubDate>
+      <guid>http://localhost:1313/posts/random%231/</guid>
+      <description>&lt;h2 id=&#34;i-am-stressed-but-happy&#34;&gt;i am stressed but happy&lt;/h2&gt;&#xA;&lt;p&gt;just testing the blog system with something random.&lt;/p&gt;&#xA;&lt;p&gt;the title says it all i am stressed but happy.&lt;/p&gt;&#xA;&lt;p&gt;lots to do, but grateful i can do interesting stuff.&lt;/p&gt;&#xA;&lt;p&gt;studying for my master&amp;rsquo;s in AI, attending lectures, working at a nice startup, and writing my bachelor&amp;rsquo;s thesis on the side.&lt;/p&gt;&#xA;&lt;h3 id=&#34;testing-code-blocks-for-future-posts&#34;&gt;testing code blocks for future posts&lt;/h3&gt;&#xA;&lt;p&gt;here&amp;rsquo;s a simple gradient descent snippet from last lecture notes in python:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

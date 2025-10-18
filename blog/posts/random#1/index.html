@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>how do i feel? - what i learned today</title>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">☾</button>
+
+    <main>
+        <nav>
+    <a href="/index.html">home</a>
+    <a href="/data-projects.html">work</a>
+    <a href="/dokkument.html" class="special-link">→ dokkument ←</a>
+    <a href="/quotes.html">quotes</a>
+    <a href="/blog/">blog</a>
+    <a href="https://www.linkedin.com/in/roberto-zanolli-2003-bo/" target="_blank" rel="noopener noreferrer">linkedin</a>
+    <a href="https://github.com/RobertoZanolli" target="_blank" rel="noopener noreferrer">github</a>
+</nav>
+
+        
+<article class="blog-post">
+    <header class="post-header">
+        <h1>how do i feel?</h1>
+        <p class="post-meta">
+            <time datetime="2025-10-19">October 19, 2025</time>
+            
+        </p>
+    </header>
+    
+    <div class="post-content">
+        <h2 id="i-am-stressed-but-happy">i am stressed but happy</h2>
+<p>just testing the blog system with something random.</p>
+<p>the title says it all i am stressed but happy.</p>
+<p>lots to do, but grateful i can do interesting stuff.</p>
+<p>studying for my master&rsquo;s in AI, attending lectures, working at a nice startup, and writing my bachelor&rsquo;s thesis on the side.</p>
+<h3 id="testing-code-blocks-for-future-posts">testing code blocks for future posts</h3>
+<p>here&rsquo;s a simple gradient descent snippet from last lecture notes in python:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">l</span>(theta):  <span style="color:#75715e"># noqa: E743</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    we assume theta to be a 2-d vector (theta_1, theta_2)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    in form of a numpy array of shape (2,)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (theta[<span style="color:#ae81ff">0</span>])<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> (theta[<span style="color:#ae81ff">1</span>])<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">grad_l</span>(theta):  <span style="color:#75715e"># noqa: E743</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    gradient of l
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    must return a numpy array of shape (2,)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> (theta[<span style="color:#ae81ff">0</span>]), <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> (theta[<span style="color:#ae81ff">1</span>])])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">GD</span>(l, grad_l, theta_0, eta, maxit):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    gradient descent algorithm
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    inputs:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    - l: function to minimize
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    - grad_l: gradient of the function to minimize
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    - theta_0: initial point (numpy array of shape (n,))
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    - eta: learning rate (float)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    - maxit: maximum number of iterations (int)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    theta <span style="color:#f92672">=</span> theta_0
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(maxit):
+</span></span><span style="display:flex;"><span>        theta <span style="color:#f92672">=</span> theta <span style="color:#f92672">-</span> eta <span style="color:#f92672">*</span> grad_l(theta)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> theta
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>print(GD(l, grad_l, np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.0</span>]), <span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">1000</span>))
+</span></span></code></pre></div>
+    </div>
+</article>
+
+<div style="margin-top: 3em; padding-top: 2em; border-top: 1px solid var(--border-color);">
+    <a href="/blog/">← back to blog</a>
+</div>
+
+    </main>
+
+    <footer>
+        &copy; 2025 Roberto Zanolli | All rights reserved.
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>
