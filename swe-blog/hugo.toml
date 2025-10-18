@@ -1,4 +1,4 @@
-baseURL = 'https://robertozanolli.github.io'
+baseURL = 'https://robertozanolli.github.io/blog/'
 languageCode = 'en-us'
 title = 'what i learned today'
 theme = 'custom'
