@@ -13,7 +13,7 @@ between all the interesting subjects in this master, for now, ml seems to be my 
 
 decision trees work by recursively splitting data based on attribute values. the key question is: which attribute should we test first?
 
-this is where **information gain (IG)** comes in. it measures how much a split reduces uncertainty about the class label.
+this is where **information gain ($IG$)** comes in. it measures how much a split reduces uncertainty about the class label.
 
 ### entropy and information gain
 
