@@ -6,15 +6,8 @@
     <description>Recent content in Posts on what i learned today</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 27 Nov 2025 22:15:30 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 28 Oct 2025 13:21:28 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>relax</title>
-      <link>http://localhost:1313/blog/posts/relax/</link>
-      <pubDate>Thu, 27 Nov 2025 22:15:30 +0100</pubDate>
-      <guid>http://localhost:1313/blog/posts/relax/</guid>
-      <description>&lt;h1 id=&#34;time-to-recharge&#34;&gt;time to recharge&lt;/h1&gt;&#xA;&lt;p&gt;after weeks of intense work, it&amp;rsquo;s time to take a step back and relax.&lt;/p&gt;&#xA;&lt;p&gt;sometimes, the best way to recharge is to disconnect and enjoy the simple pleasures of life. whether it&amp;rsquo;s reading a good book, or simply spending time with loved ones.&lt;/p&gt;&#xA;&lt;h2 id=&#34;a-new-chapter-begins&#34;&gt;a new chapter begins&lt;/h2&gt;&#xA;&lt;p&gt;the past few months have been transformative.&#xA;i successfully defended my thesis and earned my bachelor&amp;rsquo;s degree, which felt like closing one chapter and immediately opening another. without much pause, i dove straight into my master&amp;rsquo;s degree in AI while continuing to work. it&amp;rsquo;s hard to balance both, but the passion for what i&amp;rsquo;m learning keeps me motivated.&lt;/p&gt;</description>
-    </item>
     <item>
       <title>machine learning introduction</title>
       <link>http://localhost:1313/blog/posts/ml-intro/</link>

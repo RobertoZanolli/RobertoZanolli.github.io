@@ -29,6 +29,16 @@
         <p class="post-meta">
             <time datetime="2025-10-28">october 28, 2025</time>
             
+            <span class="post-tags">
+                
+                <span class="tag">ml</span>
+                
+                <span class="tag">data science</span>
+                
+                <span class="tag">decision trees</span>
+                
+            </span>
+            
         </p>
     </header>
     
@@ -42,10 +52,10 @@ between all the interesting subjects in this master, for now, ml seems to be my 
 <h3 id="entropy-and-information-gain">entropy and information gain</h3>
 <p>entropy measures the impurity of a dataset:</p>
 <p>$$H(c) = -\sum_{j} p_j \log_2(p_j)$$</p>
-<p>where ( p_j ) is the probability of class ( j ).</p>
-<p>information gain is the reduction in entropy after splitting on attribute ( d ) with threshold ( t ):</p>
+<p>where ( $p_j$ ) is the probability of class ( $j$ ).</p>
+<p>information gain is the reduction in entropy after splitting on attribute ( $d$ ) with threshold ( $t$ ):</p>
 <p>$$IG(c|d:t) = H(c) - H(c|d:t)$$</p>
-<p>the attribute with maximum IG gets chosen for splitting.</p>
+<p>the attribute with maximum $IG$ gets chosen for splitting.</p>
 <h2 id="quick-sklearn-example">quick sklearn example</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.tree <span style="color:#f92672">import</span> DecisionTreeClassifier
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
@@ -73,8 +83,8 @@ between all the interesting subjects in this master, for now, ml seems to be my 
 <h2 id="classification-basics">classification basics</h2>
 <p>for multi-class problems, you have two main strategies:</p>
 <ul>
-<li><strong>one-vs-rest (ovr)</strong>: train ( C ) binary classifiers (one per class)</li>
-<li><strong>one-vs-one (ovo)</strong>: train ( C \times (C-1)/2 ) classifiers (one per pair)</li>
+<li><strong>one-vs-rest (ovr)</strong>: train ( $C$ ) binary classifiers (one per class)</li>
+<li><strong>one-vs-one (ovo)</strong>: train ( $C$ * $(C-1)/2$ ) classifiers (one per pair)</li>
 </ul>
 <h2 id="full-notes-and-code">full notes and code</h2>
 <p>i&rsquo;m posting all my detailed notes, formulas, and code examples in my github repo:</p>
