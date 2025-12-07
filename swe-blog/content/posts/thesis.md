@@ -2,6 +2,8 @@
 title = 'on social impact and digitalization'
 date = 2025-10-20T08:20:15+02:00
 draft = false
+tags = ["personal"]
+
 +++
 
 finishing my thesis feels surreal after weeks researching articles and case studies. but more than that, it was about digging into the soul of a new kind of economy. 

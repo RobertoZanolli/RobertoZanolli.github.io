@@ -2,6 +2,8 @@
 title = 'relax'
 date = 2025-11-27T22:15:30+01:00
 draft = true
+tags = ["personal", "memes", "travel", "scheduling"]
+
 +++
 
 
@@ -53,7 +55,7 @@ she wanted to go first but i explained to her (in a **kind and loving way**) usi
 this results in a mean wait time of 15 minutes.
 - if i go first, i will take 3 minutes to dry my hair, so i will wait 0 minutes and she will wait 3 minutes.
 this results in a mean wait time of 1.5 minutes.
-therefore, by applying the sjf algorithm, we minimize our average waiting time and both get to enjoy dry hair faster.
+therefore, by applying the sjf algorithm, we minimize our average waiting time and both get to enjoy dry hair faster (response time its the same we just have less MWT).
 
 
 ## back to reality

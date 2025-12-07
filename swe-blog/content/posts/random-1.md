@@ -2,6 +2,8 @@
 title = 'how do i feel?'
 date = 2025-10-19T00:09:04+02:00
 draft = false
+tags = ["personal", "ml"]
+
 +++
 
 ## i am stressed but happy

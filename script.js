@@ -151,11 +151,12 @@ function displayQuotes(quotes) {
     quotes.forEach(quote => { 
         const blockquote = document.createElement('blockquote');
         const p = document.createElement('p');
-        // Use 'q' field from zenquotes API for the quote text
-        p.textContent = `"${quote.q}"`; 
+        // Use 'q' field from zenquotes API for the quote text, force lowercase per request
+        const quoteText = (quote.q || '').toLowerCase();
+        p.textContent = `"${quoteText}"`; 
         const cite = document.createElement('cite');
-        // Use 'a' field for the author, provide default if null
-        cite.textContent = quote.a || 'Unknown'; 
+        // Use 'a' field for the author, lowercase and provide default if null
+        cite.textContent = (quote.a || 'unknown').toLowerCase(); 
         
         blockquote.appendChild(p);
         blockquote.appendChild(cite);

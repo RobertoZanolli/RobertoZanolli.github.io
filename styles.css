@@ -213,6 +213,19 @@ a:hover {
     align-self: flex-start; /* Align link to the start */
 }
 
+.center-link {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-link a {
+    align-self: center;
+}
+
 /* Quotes */
 blockquote {
     border-left: 3px solid var(--secondary-text-color);
