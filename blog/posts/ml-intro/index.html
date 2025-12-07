@@ -6,6 +6,8 @@
     <title>machine learning introduction - what i learned today</title>
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="/styles.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+
 </head>
 <body>
     <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">☾</button>
@@ -31,7 +33,55 @@
     </header>
     
     <div class="post-content">
-        
+        <h1 id="decision-trees-and-classification-basics">decision trees and classification basics</h1>
+<p>from the dirst lessons of my machine learning course, here are some key concepts about decision trees and classification methods.
+between all the interesting subjects in this master, for now, ml seems to be my favorite.</p>
+<h2 id="decision-trees-the-fundamentals">decision trees: the fundamentals</h2>
+<p>decision trees work by recursively splitting data based on attribute values. the key question is: which attribute should we test first?</p>
+<p>this is where <strong>information gain (IG)</strong> comes in. it measures how much a split reduces uncertainty about the class label.</p>
+<h3 id="entropy-and-information-gain">entropy and information gain</h3>
+<p>entropy measures the impurity of a dataset:</p>
+<p>$$H(c) = -\sum_{j} p_j \log_2(p_j)$$</p>
+<p>where ( p_j ) is the probability of class ( j ).</p>
+<p>information gain is the reduction in entropy after splitting on attribute ( d ) with threshold ( t ):</p>
+<p>$$IG(c|d:t) = H(c) - H(c|d:t)$$</p>
+<p>the attribute with maximum IG gets chosen for splitting.</p>
+<h2 id="quick-sklearn-example">quick sklearn example</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.tree <span style="color:#f92672">import</span> DecisionTreeClassifier
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.datasets <span style="color:#f92672">import</span> load_iris
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># load data</span>
+</span></span><span style="display:flex;"><span>X, y <span style="color:#f92672">=</span> load_iris(return_X_y<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>X_train, X_test, y_train, y_test <span style="color:#f92672">=</span> train_test_split(
+</span></span><span style="display:flex;"><span>    X, y, test_size<span style="color:#f92672">=</span><span style="color:#ae81ff">0.3</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># train decision tree</span>
+</span></span><span style="display:flex;"><span>model <span style="color:#f92672">=</span> DecisionTreeClassifier(max_depth<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>fit(X_train, y_train)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># evaluate</span>
+</span></span><span style="display:flex;"><span>accuracy <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>score(X_test, y_test)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;accuracy: </span><span style="color:#e6db74">{</span>accuracy<span style="color:#e6db74">:</span><span style="color:#e6db74">.2f</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span></code></pre></div><h2 id="key-hyperparameters">key hyperparameters</h2>
+<ul>
+<li><code>max_depth</code>: controls tree depth to prevent overfitting</li>
+<li><code>min_samples_split</code>: minimum samples required to split a node</li>
+<li><code>criterion</code>: &ldquo;gini&rdquo; or &ldquo;entropy&rdquo; for measuring split quality</li>
+</ul>
+<h2 id="classification-basics">classification basics</h2>
+<p>for multi-class problems, you have two main strategies:</p>
+<ul>
+<li><strong>one-vs-rest (ovr)</strong>: train ( C ) binary classifiers (one per class)</li>
+<li><strong>one-vs-one (ovo)</strong>: train ( C \times (C-1)/2 ) classifiers (one per pair)</li>
+</ul>
+<h2 id="full-notes-and-code">full notes and code</h2>
+<p>i&rsquo;m posting all my detailed notes, formulas, and code examples in my github repo:</p>
+<p><a href="https://github.com/RobertoZanolli/ML_DataMining-25-26">https://github.com/RobertoZanolli/ML_DataMining-25-26</a></p>
+<p>you&rsquo;ll find markdown files covering decision trees, entropy calculations, cross-validation strategies, ensemble methods, and more.</p>
+<p>these are my study notes from the artificial intelligence master&rsquo;s program. feel free to use them if they help!</p>
+
     </div>
 </article>
 
@@ -42,7 +92,7 @@
     </main>
 
     <footer>
-        &copy; 2025 Roberto Zanolli | All rights reserved.
+        &copy; 2025 roberto zanolli | all rights reserved.
     </footer>
 
     <script src="/script.js"></script>

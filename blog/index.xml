@@ -20,7 +20,7 @@
       <link>http://localhost:1313/blog/posts/ml-intro/</link>
       <pubDate>Tue, 28 Oct 2025 13:21:28 +0200</pubDate>
       <guid>http://localhost:1313/blog/posts/ml-intro/</guid>
-      <description></description>
+      <description>&lt;h1 id=&#34;decision-trees-and-classification-basics&#34;&gt;decision trees and classification basics&lt;/h1&gt;&#xA;&lt;p&gt;from the dirst lessons of my machine learning course, here are some key concepts about decision trees and classification methods.&#xA;between all the interesting subjects in this master, for now, ml seems to be my favorite.&lt;/p&gt;&#xA;&lt;h2 id=&#34;decision-trees-the-fundamentals&#34;&gt;decision trees: the fundamentals&lt;/h2&gt;&#xA;&lt;p&gt;decision trees work by recursively splitting data based on attribute values. the key question is: which attribute should we test first?&lt;/p&gt;&#xA;&lt;p&gt;this is where &lt;strong&gt;information gain (IG)&lt;/strong&gt; comes in. it measures how much a split reduces uncertainty about the class label.&lt;/p&gt;</description>
     </item>
     <item>
       <title>on social impact and digitalization</title>
