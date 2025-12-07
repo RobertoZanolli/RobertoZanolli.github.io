@@ -20,13 +20,13 @@ entropy measures the impurity of a dataset:
 
 $$H(c) = -\sum_{j} p_j \log_2(p_j)$$
 
-where \( p_j \) is the probability of class \( j \).
+where \( $p_j$ \) is the probability of class \( $j$ \).
 
-information gain is the reduction in entropy after splitting on attribute \( d \) with threshold \( t \):
+information gain is the reduction in entropy after splitting on attribute \( $d$ \) with threshold \( $t$ \):
 
 $$IG(c|d:t) = H(c) - H(c|d:t)$$
 
-the attribute with maximum IG gets chosen for splitting.
+the attribute with maximum $IG$ gets chosen for splitting.
 
 ## quick sklearn example
 
@@ -60,8 +60,8 @@ print(f"accuracy: {accuracy:.2f}")
 
 for multi-class problems, you have two main strategies:
 
-- **one-vs-rest (ovr)**: train \( C \) binary classifiers (one per class)
-- **one-vs-one (ovo)**: train \( C \times (C-1)/2 \) classifiers (one per pair)
+- **one-vs-rest (ovr)**: train \( $C$ \) binary classifiers (one per class)
+- **one-vs-one (ovo)**: train \( $C$ * $(C-1)/2$ \) classifiers (one per pair)
 
 ## full notes and code
 
