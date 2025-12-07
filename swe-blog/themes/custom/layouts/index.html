@@ -9,7 +9,7 @@
     <article class="blog-post-preview">
         <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
         <p class="post-meta">
-            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" | lower }}</time>
             {{ if .Params.tags }}
             <span class="post-tags">
                 {{ range .Params.tags }}
