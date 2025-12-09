@@ -3,10 +3,18 @@
 <head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decision Trees - what i learned today</title>
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="/styles.css">
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+        <title>Decision Trees - what i learned today</title>
+        <link rel="icon" href="/images/favicon.ico" type="image/x-icon"/>
+        <link rel="stylesheet" href="/styles.css">
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],
+                    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+                }
+            };
+        </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 
 </head>
 <body>
@@ -50,7 +58,7 @@
 between all the interesting subjects in this master, for now, ml seems to be my favorite.</p>
 <h2 id="decision-trees-the-fundamentals">decision trees: the fundamentals</h2>
 <p>decision trees work by recursively splitting data based on attribute values. the key question is: which attribute should we test first?</p>
-<p>this is where <strong>information gain (IG)</strong> comes in. it measures how much a split reduces uncertainty about the class label.</p></p>
+<p>this is where <strong>information gain ($IG$)</strong> comes in. it measures how much a split reduces uncertainty about the class label.</p></p>
         
         <a href="/blog/posts/ml-intro/" class="read-more">read more →</a>
     </article>

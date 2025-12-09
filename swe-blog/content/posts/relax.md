@@ -1,7 +1,7 @@
 +++
 title = 'relax'
 date = 2025-11-27T22:15:30+01:00
-draft = true
+draft = false
 tags = ["personal", "memes", "travel", "scheduling"]
 
 +++

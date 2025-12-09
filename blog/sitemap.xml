@@ -2,7 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/blog/tags/memes/</loc>
+    <lastmod>2025-11-27T22:15:30+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/tags/personal/</loc>
+    <lastmod>2025-11-27T22:15:30+01:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/blog/posts/</loc>
+    <lastmod>2025-11-27T22:15:30+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/posts/relax/</loc>
+    <lastmod>2025-11-27T22:15:30+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/tags/scheduling/</loc>
+    <lastmod>2025-11-27T22:15:30+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/tags/</loc>
+    <lastmod>2025-11-27T22:15:30+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/tags/travel/</loc>
     <lastmod>2025-11-27T22:15:30+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/</loc>
@@ -20,13 +38,7 @@
     <loc>http://localhost:1313/blog/tags/ml/</loc>
     <lastmod>2025-10-28T13:21:28+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/tags/</loc>
-    <lastmod>2025-10-28T13:21:28+02:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/blog/posts/thesis/</loc>
-    <lastmod>2025-10-20T08:20:15+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/blog/tags/personal/</loc>
     <lastmod>2025-10-20T08:20:15+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/posts/random-1/</loc>
