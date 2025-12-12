@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Planning Intro - what i learned today</title>
+        <link rel="icon" href="/images/favicon.ico" type="image/x-icon"/>
+        <link rel="stylesheet" href="/styles.css">
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],
+                    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+                }
+            };
+        </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">☾</button>
+
+    <main>
+        <nav>
+    <a href="/index.html">home</a>
+    <a href="/data-projects.html">work</a>
+    <a href="/quotes.html">quotes</a>
+    <a href="/blog/">blog</a>
+    <a href="https://www.linkedin.com/in/roberto-zanolli-2003-bo/" target="_blank" rel="noopener noreferrer">linkedin</a>
+    <a href="https://github.com/RobertoZanolli" target="_blank" rel="noopener noreferrer">github</a>
+</nav>
+
+        
+<article class="blog-post">
+    <header class="post-header">
+        <h1>Planning Intro</h1>
+        <p class="post-meta">
+            <time datetime="2025-12-12">december 12, 2025</time>
+            
+            <span class="post-tags">
+                
+                <span class="tag">planning</span>
+                
+                <span class="tag">ai</span>
+                
+            </span>
+            
+        </p>
+    </header>
+    
+    <div class="post-content">
+        <h1 id="planning-notes-offline-vs-online-and-why-deductive-planning-is-cool">planning notes: offline vs online, and why deductive planning is cool</h1>
+<p>i recently started studying planning at college.
+i did not expect it to feel this close to the way i think about programming: specify what you want, specify what operations are allowed, then search for a sequence that makes the world look like the goal.</p>
+<p>in this post i just want to write down the basics that helped me orient myself.</p>
+<h2 id="what-i-mean-by-planning">what i mean by planning</h2>
+<p>in classical ai planning you usually have:</p>
+<ul>
+<li>a set of <strong>states</strong> (facts that are true right now)</li>
+<li>a set of <strong>actions/operators</strong> with preconditions and effects</li>
+<li>an <strong>initial state</strong> $s_0$</li>
+<li>a <strong>goal</strong> $g$ (often a conjunction of predicates)</li>
+</ul>
+<p>planning is the problem of finding a plan (a sequence, or sometimes a partial order) of actions that transforms $s_0$ into a state that satisfies $g$.</p>
+<h2 id="offline-vs-online-planning">offline vs online planning</h2>
+<p>this distinction is simple but important.</p>
+<p><strong>offline planning</strong> (also called deliberative planning):</p>
+<ul>
+<li>you compute a plan before acting</li>
+<li>you assume the model is reliable (or at least stable)</li>
+<li>you execute the plan more or less as computed</li>
+</ul>
+<p>it is a good fit when actions are predictable and you can afford thinking time.</p>
+<p><strong>online planning</strong> (planning while acting):</p>
+<ul>
+<li>you interleave planning and execution</li>
+<li>you re-plan when the world surprises you (or you only plan a short horizon)</li>
+</ul>
+<p>it is a good fit when the environment changes, sensing matters, or the model is incomplete.</p>
+<p>for me the interesting part is that both styles are the same idea, just with a different control loop.</p>
+<h2 id="two-formulations-i-keep-seeing-green-vs-kowalski">two formulations i keep seeing: green vs kowalski</h2>
+<p>different sources present planning in different “shapes”. two that pop up a lot are:</p>
+<p><strong>green formulation</strong> (planning as theorem proving):</p>
+<ul>
+<li>you encode actions and change in logic</li>
+<li>planning becomes: prove that the goal is reachable from the initial facts</li>
+<li>a proof corresponds to a plan (the constructive part)</li>
+</ul>
+<p>it frames planning as a logical derivation problem.</p>
+<p><strong>kowalski formulation</strong> (planning as logic + control):</p>
+<ul>
+<li>“algorithm = logic + control”</li>
+<li>you still have a declarative part (rules describing the world)</li>
+<li>but you make explicit the strategy that drives the search (which subgoal first, how to backtrack, what to prefer)</li>
+</ul>
+<p>in practice this matches what you actually do when you implement a planner: the domain model is one thing, but search control is where everything becomes feasible or infeasible.</p>
+<h2 id="deductive-planning-the-part-i-like-the-most">deductive planning (the part i like the most)</h2>
+<p>deductive planning is the view where building a plan is like building a proof: you start from a goal, and you keep reducing it into subgoals until everything is supported by the initial facts.</p>
+<p>one very concrete way to see this is <strong>partial-order planning</strong> (also called non-linear planning):</p>
+<ul>
+<li>you do not commit immediately to a total sequence</li>
+<li>you maintain a set of actions, ordering constraints, and causal links</li>
+<li>you refine the plan by resolving open preconditions</li>
+<li>you also have to detect and resolve threats</li>
+</ul>
+<h3 id="tiny-blocks-world-example">tiny blocks world example</h3>
+<p>i’ll use the classic blocks world because it makes the mechanics obvious.</p>
+<p>predicates (informal):</p>
+<ul>
+<li><code>on(x, y)</code>: block $x$ is on block $y$</li>
+<li><code>ontable(x)</code>, <code>clear(x)</code>, <code>holding(x)</code>, <code>handempty</code></li>
+</ul>
+<p>actions (strips-like skeleton):</p>
+<ul>
+<li>
+<p><code>pickup(x)</code></p>
+<ul>
+<li>pre: <code>handempty ∧ clear(x) ∧ ontable(x)</code></li>
+<li>eff: <code>holding(x) ∧ ¬handempty ∧ ¬ontable(x)</code></li>
+</ul>
+</li>
+<li>
+<p><code>stack(x, y)</code></p>
+<ul>
+<li>pre: <code>holding(x) ∧ clear(y)</code></li>
+<li>eff: <code>on(x, y) ∧ handempty ∧ clear(x) ∧ ¬holding(x) ∧ ¬clear(y)</code></li>
+</ul>
+</li>
+</ul>
+<p>(i am not trying to be perfectly formal here, i just want enough to follow the refinement steps.)</p>
+<p>assume a goal like:</p>
+<p>$$g = on(b, c) \wedge on(c, a)$$</p>
+<p>and an initial state where, among other facts, $b$ is on the table and $c$ is clear.</p>
+<h3 id="plan-refinement-step-by-step">plan refinement, step by step</h3>
+<p>start with a minimal plan with two dummy actions:</p>
+<ul>
+<li><code>start</code>: its effects represent the initial facts</li>
+<li><code>stop</code>: its preconditions represent the goal facts</li>
+</ul>
+<p>then iteratively:</p>
+<h4 id="1st-step-support-onb-c">1st step: support <code>on(b, c)</code></h4>
+<ul>
+<li>select an open precondition from the goal: <code>on(b, c)</code></li>
+<li>choose an action whose effect achieves it: <code>stack(b, c)</code></li>
+<li>add ordering: <code>start &lt; stack(b, c) &lt; stop</code></li>
+<li>add causal link: ⟨<code>stack(b, c)</code>, <code>on(b, c)</code>, <code>stop</code>⟩</li>
+</ul>
+<h4 id="2nd-step-support-onc-a">2nd step: support <code>on(c, a)</code></h4>
+<ul>
+<li>same idea for <code>on(c, a)</code></li>
+<li>choose <code>stack(c, a)</code></li>
+<li>add ordering and the causal link into <code>stop</code></li>
+</ul>
+<p>now the plan has two real actions, but each of them introduces new open preconditions.</p>
+<h4 id="3rd-step-support-holdingb-for-stackb-c">3rd step: support <code>holding(b)</code> for <code>stack(b, c)</code></h4>
+<p><code>stack(b, c)</code> needs <code>holding(b)</code>.</p>
+<ul>
+<li>select open precondition: <code>holding(b)</code></li>
+<li>actions that can achieve it include <code>pickup(b)</code> (or <code>unstack(b, y)</code>)</li>
+<li>if the initial state says <code>ontable(b)</code>, then <code>pickup(b)</code> is the reasonable choice</li>
+<li>add ordering: <code>start &lt; pickup(b) &lt; stack(b, c)</code></li>
+<li>add causal link: ⟨<code>pickup(b)</code>, <code>holding(b)</code>, <code>stack(b, c)</code>⟩</li>
+</ul>
+<p>at this point you check if the preconditions of <code>pickup(b)</code> are already supported by <code>start</code>.
+if they are, you add the corresponding causal links from <code>start</code>.</p>
+<h4 id="4th-step-do-the-same-for-the-other-branch">4th step: do the same for the other branch</h4>
+<p>repeat the same idea for <code>stack(c, a)</code> (it will need <code>holding(c)</code> and <code>clear(a)</code>), inserting the actions that make those preconditions true.</p>
+<h3 id="threats-when-planning-becomes-interesting">threats: when planning becomes interesting</h3>
+<p>this is where the planner stops feeling like a clean proof and starts feeling like real search.</p>
+<p>a typical threat pattern is:</p>
+<ul>
+<li>you have a causal link ⟨<code>a</code>, <code>p</code>, <code>b</code>⟩ meaning “action <code>a</code> establishes <code>p</code> for action <code>b</code>”</li>
+<li>some other action <code>t</code> might negate <code>p</code></li>
+<li>and <code>t</code> could be ordered between <code>a</code> and <code>b</code></li>
+</ul>
+<p>then you must resolve the threat, usually by adding ordering constraints.</p>
+<p>one concrete example:</p>
+<ul>
+<li><code>pickup(b)</code> makes <code>¬handempty</code></li>
+<li>but <code>pickup(a)</code> needs <code>handempty</code></li>
+</ul>
+<p>so if you want both in the plan, you need to order them through an action that restores <code>handempty</code> (like stacking/putting down something) or constrain the ordering so the required conditions are preserved.</p>
+<p>and sometimes you discover something worse: a choice you made early makes a later subgoal impossible, and ordering constraints cannot fix it.
+then you have to backtrack and change the plan structure.</p>
+<p>this is why i find deductive planning interesting: you are not just picking actions, you are building a consistent web of commitments.</p>
+<h2 id="small-closing-thought">small closing thought</h2>
+<p>for now i’m mostly trying to get comfortable with the basic mental model: goals, preconditions, effects, refinement, threats.
+even in toy domains, it is a nice reminder that “figuring out what to do” can be treated as a first-class computational problem.</p>
+
+    </div>
+</article>
+
+<div style="margin-top: 3em; padding-top: 2em; border-top: 1px solid var(--border-color);">
+    <a href="/blog/">← back to blog</a>
+</div>
+
+    </main>
+
+    <footer>
+        &copy; 2025 roberto zanolli | all rights reserved.
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>

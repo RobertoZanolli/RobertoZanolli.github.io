@@ -6,8 +6,15 @@
     <description>Recent content on what i learned today</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 27 Nov 2025 22:15:30 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 12 Dec 2025 14:45:04 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Planning Intro</title>
+      <link>http://localhost:1313/blog/posts/planning-intro/</link>
+      <pubDate>Fri, 12 Dec 2025 14:45:04 +0100</pubDate>
+      <guid>http://localhost:1313/blog/posts/planning-intro/</guid>
+      <description>&lt;h1 id=&#34;planning-notes-offline-vs-online-and-why-deductive-planning-is-cool&#34;&gt;planning notes: offline vs online, and why deductive planning is cool&lt;/h1&gt;&#xA;&lt;p&gt;i recently started studying planning at college.&#xA;i did not expect it to feel this close to the way i think about programming: specify what you want, specify what operations are allowed, then search for a sequence that makes the world look like the goal.&lt;/p&gt;&#xA;&lt;p&gt;in this post i just want to write down the basics that helped me orient myself.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>relax</title>
       <link>http://localhost:1313/blog/posts/relax/</link>
