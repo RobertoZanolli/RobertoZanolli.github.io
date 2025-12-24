@@ -141,6 +141,7 @@ nav {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5em;
+    align-items: center;
   justify-content: center; /* Center nav items on homepage */
   margin-top: 2em; /* Add margin below nav on other pages */
 }
@@ -354,8 +355,113 @@ footer {
 }
 
 /* Blog Styles */
+.nav-search {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.post-search {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.75rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-background);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.post-search--nav {
+    width: 170px;
+    padding: 0.35rem 0.55rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    .nav-search {
+        margin-left: 0;
+        width: 100%;
+    }
+    .post-search--nav {
+        width: 100%;
+    }
+}
+
+.post-search::placeholder {
+    color: var(--secondary-text-color);
+}
+
+.post-search:focus {
+    outline: none;
+    border-color: var(--link-hover-color);
+}
+
+.post-search-empty {
+    color: var(--secondary-text-color);
+    margin-top: 1.5rem;
+}
+
 .blog-posts {
     margin-top: 2rem;
+}
+
+.pagination {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.pagination-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-background);
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1;
+    user-select: none;
+}
+
+.pagination-link:hover {
+    border-color: var(--link-hover-color);
+    color: var(--link-hover-color);
+    text-decoration: none;
+}
+
+.pagination-link:focus-visible {
+    outline: 2px solid var(--link-hover-color);
+    outline-offset: 2px;
+}
+
+.pagination-link.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination-info {
+    flex: 1;
+    text-align: center;
+    color: var(--secondary-text-color);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    .pagination {
+        justify-content: center;
+    }
+    .pagination-info {
+        flex: 0 0 100%;
+        order: 3;
+    }
 }
 
 .blog-post-preview {

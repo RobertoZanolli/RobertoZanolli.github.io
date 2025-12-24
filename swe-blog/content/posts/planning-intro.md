@@ -1,5 +1,5 @@
 +++
-title = 'Planning Intro'
+title = 'planning intro'
 date = 2025-12-12T14:45:04+01:00
 draft = false
 tags = ['planning', 'ai']

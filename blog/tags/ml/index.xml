@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ml on what i learned today</title>
-    <link>http://localhost:1313/blog/tags/ml/</link>
+    <link>https://robertozanolli.github.io/blog/tags/ml/</link>
     <description>Recent content in Ml on what i learned today</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 28 Oct 2025 13:21:28 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/tags/ml/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://robertozanolli.github.io/blog/tags/ml/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>machine learning introduction</title>
-      <link>http://localhost:1313/blog/posts/ml-intro/</link>
+      <link>https://robertozanolli.github.io/blog/posts/ml-intro/</link>
       <pubDate>Tue, 28 Oct 2025 13:21:28 +0200</pubDate>
-      <guid>http://localhost:1313/blog/posts/ml-intro/</guid>
+      <guid>https://robertozanolli.github.io/blog/posts/ml-intro/</guid>
       <description>&lt;h1 id=&#34;decision-trees-and-classification-basics&#34;&gt;decision trees and classification basics&lt;/h1&gt;&#xA;&lt;p&gt;from the dirst lessons of my machine learning course, here are some key concepts about decision trees and classification methods.&#xA;between all the interesting subjects in this master, for now, ml seems to be my favorite.&lt;/p&gt;&#xA;&lt;h2 id=&#34;decision-trees-the-fundamentals&#34;&gt;decision trees: the fundamentals&lt;/h2&gt;&#xA;&lt;p&gt;decision trees work by recursively splitting data based on attribute values. the key question is: which attribute should we test first?&lt;/p&gt;&#xA;&lt;p&gt;this is where &lt;strong&gt;information gain ($IG$)&lt;/strong&gt; comes in. it measures how much a split reduces uncertainty about the class label.&lt;/p&gt;</description>
     </item>
     <item>
       <title>how do i feel?</title>
-      <link>http://localhost:1313/blog/posts/random-1/</link>
+      <link>https://robertozanolli.github.io/blog/posts/random-1/</link>
       <pubDate>Sun, 19 Oct 2025 00:09:04 +0200</pubDate>
-      <guid>http://localhost:1313/blog/posts/random-1/</guid>
+      <guid>https://robertozanolli.github.io/blog/posts/random-1/</guid>
       <description>&lt;h2 id=&#34;i-am-stressed-but-happy&#34;&gt;i am stressed but happy&lt;/h2&gt;&#xA;&lt;p&gt;just testing the blog system with something random.&lt;/p&gt;&#xA;&lt;p&gt;the title says it all i am stressed but happy.&lt;/p&gt;&#xA;&lt;p&gt;lots to do, but grateful i can do interesting stuff.&lt;/p&gt;&#xA;&lt;p&gt;studying for my master&amp;rsquo;s in AI, attending lectures, working at a nice startup, and writing my bachelor&amp;rsquo;s thesis on the side.&lt;/p&gt;&#xA;&lt;h3 id=&#34;testing-code-blocks-for-future-posts&#34;&gt;testing code blocks for future posts&lt;/h3&gt;&#xA;&lt;p&gt;here&amp;rsquo;s a simple gradient descent snippet from last lecture notes in python:&lt;/p&gt;</description>
     </item>
   </channel>

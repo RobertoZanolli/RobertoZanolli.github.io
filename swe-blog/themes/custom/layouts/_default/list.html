@@ -5,8 +5,8 @@
 <p class="subtitle">things I learn as a software engineer.</p>
 
 <div class="blog-posts">
-    {{ range .Pages }}
-    <article class="blog-post-preview">
+    {{ range .Paginator.Pages }}
+    <article class="blog-post-preview" data-title="{{ .Title | plainify | lower }}">
         <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
         <p class="post-meta">
             <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" | lower }}</time>
@@ -23,6 +23,27 @@
         {{ end }}
         <a href="{{ .RelPermalink }}" class="read-more">read more →</a>
     </article>
+    {{ end }}
+</div>
+
+<!-- Paginazione -->
+<div class="pagination">
+    {{ if .Paginator.HasPrev }}
+    <a href="{{ .Paginator.Prev.URL }}" class="pagination-link prev"
+        >← Previous</a
+    >
+    {{ else }}
+    <span class="pagination-link disabled">← Previous</span>
+    {{ end }}
+
+    <span class="pagination-info">
+        Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}
+    </span>
+
+    {{ if .Paginator.HasNext }}
+    <a href="{{ .Paginator.Next.URL }}" class="pagination-link next">Next →</a>
+    {{ else }}
+    <span class="pagination-link disabled">Next →</span>
     {{ end }}
 </div>
 {{ end }}

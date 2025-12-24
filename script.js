@@ -69,7 +69,134 @@ document.addEventListener('DOMContentLoaded', () => {
     if (quotesContainer) {
         fetchAndDisplayQuotes();
     }
+
+    // --- Blog title search (only on pages that have the input) ---
+    setupPostTitleSearch();
 });
+
+function setupPostTitleSearch() {
+    const searchInput = document.getElementById('post-search');
+    if (!searchInput) return;
+
+    const postsContainer = document.querySelector('.blog-posts');
+    if (!postsContainer) return;
+
+    const pagination = document.querySelector('.pagination');
+    const originalPostsHtml = postsContainer.innerHTML;
+    const originalPaginationDisplay = pagination ? pagination.style.display : null;
+    let postsIndexCache = null;
+    let fetchInFlight = null;
+
+    function normalize(value) {
+        return (value || '').toString().trim().toLowerCase();
+    }
+
+    function getIndexUrlCandidates() {
+        const base = (document.querySelector('base')?.href || '').trim();
+        return [
+            '/blog/index.json',
+            'index.json',
+            base ? new URL('index.json', base).toString() : null,
+        ].filter(Boolean);
+    }
+
+    async function loadPostsIndex() {
+        if (postsIndexCache) return postsIndexCache;
+        if (fetchInFlight) return fetchInFlight;
+
+        fetchInFlight = (async () => {
+            const candidates = getIndexUrlCandidates();
+            let lastError = null;
+
+            for (const url of candidates) {
+                try {
+                    const resp = await fetch(url, { cache: 'force-cache' });
+                    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+                    const json = await resp.json();
+                    if (!Array.isArray(json)) throw new Error('Index JSON is not an array');
+
+                    postsIndexCache = json
+                        .map((item) => ({
+                            title: item?.title ?? '',
+                            title_lc: item?.title_lc ?? normalize(item?.title ?? ''),
+                            url: item?.url ?? '',
+                            date: item?.date ?? null,
+                        }))
+                        .filter((item) => item.title && item.url);
+
+                    return postsIndexCache;
+                } catch (e) {
+                    lastError = e;
+                }
+            }
+
+            throw lastError || new Error('Failed to load posts index');
+        })();
+
+        try {
+            return await fetchInFlight;
+        } finally {
+            fetchInFlight = null;
+        }
+    }
+
+    function renderResults(items) {
+        const safeItems = Array.isArray(items) ? items : [];
+        const html = safeItems
+            .map((item) => {
+                const title = escapeHtml(item.title);
+                const url = escapeAttribute(item.url);
+                const date = item.date ? `<time datetime="${escapeAttribute(item.date)}">${escapeHtml(item.date)}</time>` : '';
+                return `
+<article class="blog-post-preview" data-title="${escapeAttribute(item.title_lc)}">
+  <h2><a href="${url}">${title}</a></h2>
+  <p class="post-meta">${date}</p>
+  <a href="${url}" class="read-more">read more →</a>
+</article>`;
+            })
+            .join('');
+
+        postsContainer.innerHTML = html || '<p class="post-search-empty">No matching posts.</p>';
+    }
+
+    function showOriginalList() {
+        postsContainer.innerHTML = originalPostsHtml;
+        if (pagination) pagination.style.display = originalPaginationDisplay || '';
+    }
+
+    function escapeHtml(value) {
+        return (value || '').toString()
+            .replaceAll('&', '&amp;')
+            .replaceAll('<', '&lt;')
+            .replaceAll('>', '&gt;')
+            .replaceAll('"', '&quot;')
+            .replaceAll("'", '&#39;');
+    }
+
+    function escapeAttribute(value) {
+        return escapeHtml(value).replaceAll('`', '&#96;');
+    }
+
+    async function onInput() {
+        const query = normalize(searchInput.value);
+        if (query === '') {
+            showOriginalList();
+            return;
+        }
+
+        if (pagination) pagination.style.display = 'none';
+
+        try {
+            const index = await loadPostsIndex();
+            const matches = index.filter((item) => (item.title_lc || '').includes(query));
+            renderResults(matches);
+        } catch {
+            postsContainer.innerHTML = '<p class="post-search-empty">Search index unavailable.</p>';
+        }
+    }
+
+    searchInput.addEventListener('input', onInput);
+}
 
 async function fetchAndDisplayQuotes() {
     const quotesContainer = document.getElementById('quotes-container');

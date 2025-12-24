@@ -1,0 +1,12 @@
+{{- /* Generates /blog/index.json (home JSON output) */ -}}
+{{- $posts := where .Site.RegularPages "Section" "posts" -}}
+{{- $items := slice -}}
+{{- range $posts -}}
+  {{- $items = $items | append (dict
+    "title" .Title
+    "title_lc" (.Title | plainify | lower)
+    "url" .RelPermalink
+    "date" (.Date.Format "2006-01-02")
+  ) -}}
+{{- end -}}
+{{- $items | jsonify -}}

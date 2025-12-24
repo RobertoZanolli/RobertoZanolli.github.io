@@ -5,8 +5,10 @@
 <p class="subtitle">things I learn as a software engineer.</p>
 
 <div class="blog-posts">
-    {{ range .Site.RegularPages }}
-    <article class="blog-post-preview">
+    {{ $posts := where .Site.RegularPages "Section" "posts" }}
+    {{ $paginator := .Paginate $posts }}
+    {{ range $paginator.Pages }}
+    <article class="blog-post-preview" data-title="{{ .Title | plainify | lower }}">
         <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
         <p class="post-meta">
             <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" | lower }}</time>
@@ -23,6 +25,24 @@
         {{ end }}
         <a href="{{ .RelPermalink }}" class="read-more">read more →</a>
     </article>
+    {{ end }}
+</div>
+
+<div class="pagination">
+    {{ if $paginator.HasPrev }}
+    <a href="{{ $paginator.Prev.URL }}" class="pagination-link prev">← Previous</a>
+    {{ else }}
+    <span class="pagination-link disabled">← Previous</span>
+    {{ end }}
+
+    <span class="pagination-info">
+        Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}
+    </span>
+
+    {{ if $paginator.HasNext }}
+    <a href="{{ $paginator.Next.URL }}" class="pagination-link next">Next →</a>
+    {{ else }}
+    <span class="pagination-link disabled">Next →</span>
     {{ end }}
 </div>
 {{ end }}

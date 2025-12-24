@@ -4,8 +4,14 @@ title = 'what i learned today'
 theme = 'custom'
 publishDir = '../blog'
 
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
+[pagination]
+  pagerSize = 3  
 [params]
   description = "things I learn as a software engineer"
+[taxonomies]
+  tag = "tags"
 
 [markup]
   [markup.highlight]
