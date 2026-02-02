@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dokkument - roberto zanolli</title>
+    <title>enys - roberto zanolli</title>
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
     <style>
-        .dokkument-hero {
+        .enys-hero {
             margin: 3rem 0;
             padding: 3rem 2rem;
             border: 2px solid var(--border-color);
@@ -18,7 +18,7 @@
             position: relative;
         }
 
-        .dokkument-hero::before {
+        .enys-hero::before {
             content: '';
             position: absolute;
             top: -2px;
@@ -28,7 +28,7 @@
             background: var(--border-color);
         }
 
-        .dokkument-hero::after {
+        .enys-hero::after {
             content: '';
             position: absolute;
             bottom: -2px;
@@ -38,18 +38,32 @@
             background: var(--border-color);
         }
 
-        .dokkument-title {
-            font-size: 2.5rem;
-            font-weight: 300;
-            letter-spacing: 0.3em;
+        .enys-title {
+            font-size: 4rem;
+            font-weight: 200;
+            letter-spacing: 0.5em;
             margin: 0 0 1rem 0;
             text-transform: lowercase;
         }
 
-        .dokkument-tagline {
+        .enys-tagline {
             color: var(--secondary-text-color);
-            font-size: 0.95rem;
+            font-size: 1rem;
             margin-bottom: 2rem;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            background: var(--code-bg);
+            border: 1px solid var(--border-color);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+        }
+
+        .status-badge::before {
+            content: '● ';
+            color: var(--accent-color);
         }
 
         .content-section {
@@ -85,9 +99,25 @@
             color: var(--secondary-text-color);
         }
 
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .tech-item {
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            background: var(--code-bg);
+            text-align: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+        }
+
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
             margin-top: 2rem;
         }
@@ -114,39 +144,6 @@
             color: var(--secondary-text-color);
             margin: 0;
             line-height: 1.6;
-        }
-
-        .code-block {
-            background: var(--code-bg);
-            border: 1px solid var(--border-color);
-            padding: 1.5rem;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            overflow-x: auto;
-            margin: 2rem 0;
-        }
-
-        .code-block pre {
-            margin: 0;
-        }
-
-        .install-section {
-            margin: 3rem 0;
-            padding: 2rem;
-            border: 1px solid var(--border-color);
-            background: var(--code-bg);
-        }
-
-        .install-section h3 {
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin: 0 0 1rem 0;
-            padding-left: 0;
-        }
-
-        .install-section h3::before {
-            display: none;
         }
 
         .action-links {
@@ -180,9 +177,9 @@
         }
 
         @media (max-width: 600px) {
-            .dokkument-title {
-                font-size: 2rem;
-                letter-spacing: 0.2em;
+            .enys-title {
+                font-size: 2.5rem;
+                letter-spacing: 0.3em;
             }
 
             .feature-grid {
@@ -214,102 +211,94 @@
     <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"></button>
 
     <main>
-        <div class="dokkument-hero">
-            <h1 class="dokkument-title">dokkument</h1>
-            <p class="dokkument-tagline">command-line documentation manager</p>
+        <div class="enys-hero">
+            <h1 class="enys-title">enys</h1>
+            <p class="enys-tagline">ai-powered fitness companion</p>
+            <span class="status-badge">work in progress — coming soon</span>
         </div>
 
         <section class="content-section">
             <h2>// overview</h2>
             <p>
-                dokkument is a cli tool born from frustration — constantly switching between my terminal and browser
-                to look up documentation, api references, and project links. i wanted a faster way, a way that kept me
-                in the flow of development.
+                enys is a web application that combines artificial intelligence with fitness tracking.
+                it's designed to be your complete fitness companion — generating personalized workout splits,
+                tracking your weight and progress over time, and providing ai-powered insights to help you train smarter.
             </p>
             <p style="margin-top: 1rem;">
-                the solution was simple: create a lightweight command-line tool that uses human-readable .dokk files
-                to store your most important links. with a single command, you can open any resource directly from
-                your terminal. no context switching, no breaking your workflow. just pure productivity.
+                the app features multiple ai-powered tools working together: a conversational chatbot interface
+                for natural interactions, an intelligent workout split generator that creates personalized routines,
+                weight tracking with visual progress charts, and an insights engine that analyzes your data to surface
+                meaningful patterns and recommendations.
             </p>
         </section>
 
         <section class="content-section">
             <h2>// preview</h2>
             <div class="demo-slider">
-                <span class="demo-label">// terminal screenshots</span>
+                <span class="demo-label">// enys.vercel.app screenshots</span>
                 <div class="slider-container">
                     <div class="slider">
                         <div class="slide">
-                            <img src="/images/dokkument_slider/full_output.png" alt="Dokkument CLI full output example">
+                            <img src="/images/enys_slider/enys-1.png" alt="enys app screenshot 1">
                         </div>
                         <div class="slide">
-                            <img src="/images/dokkument_slider/help_output.png" alt="Dokkument CLI help command output">
+                            <img src="/images/enys_slider/enys-2.png" alt="enys app screenshot 2">
                         </div>
                     </div>
                     <button class="slider-btn prev" aria-label="Previous image">‹</button>
                     <button class="slider-btn next" aria-label="Next image">›</button>
                 </div>
             </div>
-        </section>
-
-        <section class="content-section">
-            <h2>// how it works</h2>
-            <div class="code-block">
-                <pre><code># === my project links ===
-"documentation" -> "https://docs.example.com"
-"api reference" -> "https://api.example.com"
-"dashboard" -> "https://dashboard.example.com"</code></pre>
+            <div class="action-links">
+                <a href="https://enys.vercel.app" target="_blank" rel="noopener noreferrer" class="action-link primary">
+                    open enys.vercel.app →
+                </a>
             </div>
-            <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--secondary-text-color);">
-                place the .dokk file in your project directory. run <code>dokkument</code> to see all available links.
-            </p>
         </section>
 
         <section class="content-section">
             <h2>// features</h2>
             <div class="feature-grid">
                 <div class="feature-item">
-                    <h3>fast access</h3>
-                    <p>open any documentation or link with a single command. no typing long urls or searching through bookmarks.</p>
+                    <h3>ai chatbot</h3>
+                    <p>conversational interface for natural interactions. ask questions, get advice, and receive personalized guidance.</p>
                 </div>
                 <div class="feature-item">
-                    <h3>simple format</h3>
-                    <p>.dokk files use a clean, readable key-value format. edit them with any text editor, version control with git.</p>
+                    <h3>workout split generator</h3>
+                    <p>creates personalized workout splits based on your goals, schedule, and preferences. already implemented and working.</p>
                 </div>
                 <div class="feature-item">
-                    <h3>project-based</h3>
-                    <p>each project can have its own .dokk file. the tool automatically finds and uses the file in your current directory.</p>
+                    <h3>weight tracking</h3>
+                    <p>log your weight over time with visual charts and progress indicators. currently in development.</p>
                 </div>
                 <div class="feature-item">
-                    <h3>zero dependencies</h3>
-                    <p>built with python, requires no external services or databases. works offline, keeps your links private.</p>
+                    <h3>ai insights</h3>
+                    <p>analyzes your training data to surface patterns, trends, and personalized recommendations. coming soon.</p>
                 </div>
             </div>
         </section>
 
         <section class="content-section">
-            <h2>// installation</h2>
-            <div class="install-section">
-                <h3>via pip</h3>
-                <div class="code-block">
-                    <pre><code>pip install dokkument</code></pre>
-                </div>
-            </div>
-            <div class="action-links">
-                <a href="https://github.com/RobertoZanolli/dokkument" target="_blank" rel="noopener noreferrer" class="action-link primary">
-                    view on github →
-                </a>
-                <a href="https://pypi.org/project/dokkument/" target="_blank" rel="noopener noreferrer" class="action-link">
-                    view on pypi →
-                </a>
+            <h2>// technical stack</h2>
+            <p>built with modern web technologies for performance and scalability:</p>
+            <div class="tech-grid">
+                <div class="tech-item">next.js</div>
+                <div class="tech-item">supabase auth</div>
+                <div class="tech-item">ai integration</div>
+                <div class="tech-item">typescript</div>
             </div>
         </section>
 
         <section class="content-section">
             <h2>// status</h2>
             <p>
-                dokkument is published and available on pypi. it's a stable tool that i use daily in my own development workflow.
-                contributions, issues, and feedback are welcome on the github repository.
+                enys is currently in active development as a personal project.
+                i'm building this to explore the intersection of ai and fitness technology,
+                with plans to open it to the public when it reaches a stable state.
+            </p>
+            <p style="margin-top: 1rem;">
+                <strong>implemented:</strong> ai chatbot, workout split generator.<br>
+                <strong>in development:</strong> weight tracking, ai-powered insights and analytics.
             </p>
         </section>
 
@@ -323,6 +312,5 @@
     </footer>
 
     <script src="/script.js"></script>
-
 </body>
 </html>

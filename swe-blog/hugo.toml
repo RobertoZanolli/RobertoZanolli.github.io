@@ -15,6 +15,6 @@ publishDir = '../blog'
 
 [markup]
   [markup.highlight]
-    style = 'monokai'
+    style = 'fruity'
     lineNos = false
     lineNumbersInTable = false

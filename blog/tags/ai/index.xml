@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ai on what i learned today</title>
-    <link>https://robertozanolli.github.io/blog/tags/ai/</link>
+    <link>http://localhost:1313/blog/tags/ai/</link>
     <description>Recent content in Ai on what i learned today</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 12 Dec 2025 14:45:04 +0100</lastBuildDate>
-    <atom:link href="https://robertozanolli.github.io/blog/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/tags/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>planning intro</title>
-      <link>https://robertozanolli.github.io/blog/posts/planning-intro/</link>
+      <link>http://localhost:1313/blog/posts/planning-intro/</link>
       <pubDate>Fri, 12 Dec 2025 14:45:04 +0100</pubDate>
-      <guid>https://robertozanolli.github.io/blog/posts/planning-intro/</guid>
+      <guid>http://localhost:1313/blog/posts/planning-intro/</guid>
       <description>&lt;h1 id=&#34;planning-notes-offline-vs-online-and-why-deductive-planning-is-cool&#34;&gt;planning notes: offline vs online, and why deductive planning is cool&lt;/h1&gt;&#xA;&lt;p&gt;i recently started studying planning at college.&#xA;i did not expect it to feel this close to the way i think about programming: specify what you want, specify what operations are allowed, then search for a sequence that makes the world look like the goal.&lt;/p&gt;&#xA;&lt;p&gt;in this post i just want to write down the basics that helped me orient myself.&lt;/p&gt;</description>
     </item>
     <item>
       <title>machine learning introduction</title>
-      <link>https://robertozanolli.github.io/blog/posts/ml-intro/</link>
+      <link>http://localhost:1313/blog/posts/ml-intro/</link>
       <pubDate>Tue, 28 Oct 2025 13:21:28 +0200</pubDate>
-      <guid>https://robertozanolli.github.io/blog/posts/ml-intro/</guid>
+      <guid>http://localhost:1313/blog/posts/ml-intro/</guid>
       <description>&lt;h1 id=&#34;decision-trees-and-classification-basics&#34;&gt;decision trees and classification basics&lt;/h1&gt;&#xA;&lt;p&gt;from the dirst lessons of my machine learning course, here are some key concepts about decision trees and classification methods.&#xA;between all the interesting subjects in this master, for now, ml seems to be my favorite.&lt;/p&gt;&#xA;&lt;h2 id=&#34;decision-trees-the-fundamentals&#34;&gt;decision trees: the fundamentals&lt;/h2&gt;&#xA;&lt;p&gt;decision trees work by recursively splitting data based on attribute values. the key question is: which attribute should we test first?&lt;/p&gt;&#xA;&lt;p&gt;this is where &lt;strong&gt;information gain ($IG$)&lt;/strong&gt; comes in. it measures how much a split reduces uncertainty about the class label.&lt;/p&gt;</description>
     </item>
   </channel>

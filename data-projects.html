@@ -1,73 +1,92 @@
 <!DOCTYPE html>
-<html lang="en"> <!-- Changed lang to en -->
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>projects - roberto zanolli</title>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+    <!-- Curtain Navigation -->
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span class="bracket">[</span>
+        <span class="label">menu</span>
+        <span class="bracket">]</span>
+    </button>
 
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button> <!-- Theme Toggle -->
-
-    <main>
-        <nav>
-            <a href="index.html">home</a>
-            <a href="data-projects.html">work</a>
-            <a href="quotes.html">quotes</a>
-            <a href="blog/">blog</a>
+    <nav class="curtain-nav" id="curtain-nav" aria-hidden="true">
+        <div class="curtain-nav-links">
+            <a href="/index.html">home</a>
+            <a href="/data-projects.html">work</a>
+            <a href="/enys.html">enys</a>
+            <a href="/quotes.html">quotes</a>
+            <a href="/blog/">blog</a>
             <a href="https://www.linkedin.com/in/roberto-zanolli-2003-bo/" target="_blank" rel="noopener noreferrer">linkedin</a>
             <a href="https://github.com/RobertoZanolli" target="_blank" rel="noopener noreferrer">github</a>
-        </nav>
-
-        <h1>work</h1>
-        <p>a selection of projects. </p>  
-      
-
-        <div class="project-card center-link">
-            <a href="dokkument.html" class="special-link">→ dokkument ←</a>
         </div>
+    </nav>
+
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"></button>
+
+    <main>
+        <h1>work</h1>
+        <p>a selection of projects.</p>
+
         <div class="projects-container">
-            <!-- Project 1: Image Unmixing -->
+            <!-- Project: enys -->
+            <div class="project-card">
+                <h3>enys</h3>
+                <p>ai-powered web fitness app. features an ai chatbot, workout split generator, weight tracking, and ai-driven insights for personalized training recommendations.</p>
+                <a href="/enys.html">view project</a>
+            </div>
+
+            <!-- Project: dokkument -->
+            <div class="project-card">
+                <h3>dokkument</h3>
+                <p>command-line tool for quick access to your documentation links. uses simple .dokk files to manage and open resources directly from your terminal without breaking your workflow.</p>
+                <a href="/dokkument.html">view project</a>
+            </div>
+
+            <!-- Project: Image Unmixing -->
             <div class="project-card">
                 <h3>hyperspectral image unmixing</h3>
-                <p>cnn-based autoencoder for improved hyperspectral image unmixing using tensorflow and keras.</p>
+                <p>cnn-based autoencoder for improved hyperspectral image unmixing using tensorflow and keras. extracts pure spectral signatures from mixed pixel data.</p>
                 <a href="https://github.com/RobertoZanolli/image-unmixing-cnn" target="_blank" rel="noopener noreferrer">view on github</a>
             </div>
 
-            <!-- Project 2: Corporate Analysis -->
+            <!-- Project: Corporate Analysis -->
             <div class="project-card">
                 <h3>european sales study</h3>
-                <p>interactive power bi dashboard analyzing european sales data with regional insights.</p>
+                <p>interactive power bi dashboard analyzing european sales data with regional insights, trend visualization, and performance metrics for corporate decision-making.</p>
                 <a href="https://github.com/RobertoZanolli/European-corporates-sales-analysis" target="_blank" rel="noopener noreferrer">view on github</a>
             </div>
 
-            <!-- Project 3: Heart Disease Analysis -->
+            <!-- Project: Heart Disease Analysis -->
             <div class="project-card">
                 <h3>heart disease prediction</h3>
-                <p>ml model predicting heart disease risk using logistic regression, svm, and random forest.</p>
+                <p>ml model predicting heart disease risk using logistic regression, svm, and random forest. analyzes patient data to identify risk factors and support early diagnosis.</p>
                 <a href="https://github.com/RobertoZanolli/Heart-Disease-Classification---University-Project-2023-2024" target="_blank" rel="noopener noreferrer">view on github</a>
             </div>
 
-            <!-- Project 4: Salary Analysis -->
+            <!-- Project: Salary Analysis -->
             <div class="project-card">
                 <h3>global salary analysis</h3>
-                <p>python analysis of global data science compensation trends across regions and industries.</p>
+                <p>python analysis of global data science compensation trends across regions and industries. explores salary distributions, experience correlations, and geographic variations.</p>
                 <a href="https://github.com/RobertoZanolli/Global-Salary-Analysis" target="_blank" rel="noopener noreferrer">view on github</a>
             </div>
 
-        </div> <!-- End projects-container -->
-
-          
-
+        </div>
     </main>
 
     <footer>
-        &copy; 2025 roberto zanolli | all right reserved.
+        &copy; 2026 roberto zanolli | all rights reserved.
     </footer>
 
-    <script src="script.js"></script> <!-- Keep main script -->
+    <script src="/script.js"></script>
 
 </body>
 </html>

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>planning on what i learned today</title>
-    <link>https://robertozanolli.github.io/blog/tags/planning/</link>
-    <description>Recent content in planning on what i learned today</description>
+    <title>Planning on what i learned today</title>
+    <link>http://localhost:1313/blog/tags/planning/</link>
+    <description>Recent content in Planning on what i learned today</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 12 Dec 2025 14:45:04 +0100</lastBuildDate>
-    <atom:link href="https://robertozanolli.github.io/blog/tags/planning/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/tags/planning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>planning intro</title>
-      <link>https://robertozanolli.github.io/blog/posts/planning-intro/</link>
+      <link>http://localhost:1313/blog/posts/planning-intro/</link>
       <pubDate>Fri, 12 Dec 2025 14:45:04 +0100</pubDate>
-      <guid>https://robertozanolli.github.io/blog/posts/planning-intro/</guid>
+      <guid>http://localhost:1313/blog/posts/planning-intro/</guid>
       <description>&lt;h1 id=&#34;planning-notes-offline-vs-online-and-why-deductive-planning-is-cool&#34;&gt;planning notes: offline vs online, and why deductive planning is cool&lt;/h1&gt;&#xA;&lt;p&gt;i recently started studying planning at college.&#xA;i did not expect it to feel this close to the way i think about programming: specify what you want, specify what operations are allowed, then search for a sequence that makes the world look like the goal.&lt;/p&gt;&#xA;&lt;p&gt;in this post i just want to write down the basics that helped me orient myself.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -1,14 +1,58 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Curtain Navigation ---
+    const navToggle = document.getElementById('nav-toggle');
+    const curtainNav = document.getElementById('curtain-nav');
+
+    function toggleCurtain() {
+        if (curtainNav) {
+            const isOpen = curtainNav.classList.contains('active');
+            if (isOpen) {
+                curtainNav.classList.remove('active');
+                curtainNav.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('curtain-open');
+            } else {
+                curtainNav.classList.add('active');
+                curtainNav.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('curtain-open');
+            }
+        }
+    }
+
+    function closeCurtain() {
+        if (curtainNav) {
+            curtainNav.classList.remove('active');
+            curtainNav.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('curtain-open');
+        }
+    }
+
+    if (navToggle) {
+        navToggle.addEventListener('click', toggleCurtain);
+    }
+
+    // Close curtain when clicking on a link
+    const curtainLinks = curtainNav?.querySelectorAll('.curtain-nav-links a');
+    if (curtainLinks) {
+        curtainLinks.forEach(link => {
+            link.addEventListener('click', closeCurtain);
+        });
+    }
+
+    // Close curtain on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && curtainNav?.classList.contains('active')) {
+            closeCurtain();
+        }
+    });
+
     const themeToggle = document.getElementById('theme-toggle');
     const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
-    // --- Theme Handling --- 
+    // --- Theme Handling ---
     function applyTheme(theme) {
         document.documentElement.setAttribute('data-theme', theme);
-        if (themeToggle) {
-            themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
-        }
+        // Icon is now handled by CSS ::before pseudo-element
     }
 
     // Apply the saved theme or the system preference on initial load
@@ -64,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(currentIndex);
     }
 
-    // --- Quotes Handling (only on quotes page) --- 
+    // --- Quotes Handling (only on quotes page) ---
     const quotesContainer = document.getElementById('quotes-container');
     if (quotesContainer) {
         fetchAndDisplayQuotes();

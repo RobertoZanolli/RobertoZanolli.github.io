@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Personal on what i learned today</title>
-    <link>https://robertozanolli.github.io/blog/tags/personal/</link>
+    <link>http://localhost:1313/blog/tags/personal/</link>
     <description>Recent content in Personal on what i learned today</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 27 Nov 2025 22:15:30 +0100</lastBuildDate>
-    <atom:link href="https://robertozanolli.github.io/blog/tags/personal/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/tags/personal/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>relax</title>
-      <link>https://robertozanolli.github.io/blog/posts/relax/</link>
+      <link>http://localhost:1313/blog/posts/relax/</link>
       <pubDate>Thu, 27 Nov 2025 22:15:30 +0100</pubDate>
-      <guid>https://robertozanolli.github.io/blog/posts/relax/</guid>
+      <guid>http://localhost:1313/blog/posts/relax/</guid>
       <description>&lt;h1 id=&#34;time-to-recharge&#34;&gt;time to recharge&lt;/h1&gt;&#xA;&lt;p&gt;after weeks of intense work, it&amp;rsquo;s time to take a step back and relax.&lt;/p&gt;&#xA;&lt;p&gt;sometimes, the best way to recharge is to disconnect and enjoy the simple pleasures of life. whether it&amp;rsquo;s reading a good book, or simply spending time with loved ones.&lt;/p&gt;&#xA;&lt;h2 id=&#34;a-new-chapter-begins&#34;&gt;a new chapter begins&lt;/h2&gt;&#xA;&lt;p&gt;the past few months have been transformative.&#xA;i successfully defended my thesis and earned my bachelor&amp;rsquo;s degree, which felt like closing one chapter and immediately opening another. without much pause, i dove straight into my master&amp;rsquo;s degree in AI while continuing to work. it&amp;rsquo;s hard to balance both, but the passion for what i&amp;rsquo;m learning keeps me motivated.&lt;/p&gt;</description>
     </item>
     <item>
       <title>on social impact and digitalization</title>
-      <link>https://robertozanolli.github.io/blog/posts/thesis/</link>
+      <link>http://localhost:1313/blog/posts/thesis/</link>
       <pubDate>Mon, 20 Oct 2025 08:20:15 +0200</pubDate>
-      <guid>https://robertozanolli.github.io/blog/posts/thesis/</guid>
+      <guid>http://localhost:1313/blog/posts/thesis/</guid>
       <description>&lt;p&gt;finishing my thesis feels surreal after weeks researching articles and case studies. but more than that, it was about digging into the soul of a new kind of economy.&#xA;my research explored the digitalization of &lt;strong&gt;italian social enterprises&lt;/strong&gt;, framed by the beautiful principles of civil economy.&lt;/p&gt;&#xA;&lt;p&gt;civil economy emphasizes &lt;strong&gt;reciprocity&lt;/strong&gt;, &lt;strong&gt;trust&lt;/strong&gt;, and the &lt;strong&gt;common good&lt;/strong&gt;, values that seem at odds with the fast-paced, efficiency-driven world of digital tech. so i asked myself: &amp;ldquo;how can social enterprises embrace digital tools without losing their essence?&amp;rdquo;&lt;/p&gt;</description>
     </item>
     <item>
       <title>how do i feel?</title>
-      <link>https://robertozanolli.github.io/blog/posts/random-1/</link>
+      <link>http://localhost:1313/blog/posts/random-1/</link>
       <pubDate>Sun, 19 Oct 2025 00:09:04 +0200</pubDate>
-      <guid>https://robertozanolli.github.io/blog/posts/random-1/</guid>
+      <guid>http://localhost:1313/blog/posts/random-1/</guid>
       <description>&lt;h2 id=&#34;i-am-stressed-but-happy&#34;&gt;i am stressed but happy&lt;/h2&gt;&#xA;&lt;p&gt;just testing the blog system with something random.&lt;/p&gt;&#xA;&lt;p&gt;the title says it all i am stressed but happy.&lt;/p&gt;&#xA;&lt;p&gt;lots to do, but grateful i can do interesting stuff.&lt;/p&gt;&#xA;&lt;p&gt;studying for my master&amp;rsquo;s in AI, attending lectures, working at a nice startup, and writing my bachelor&amp;rsquo;s thesis on the side.&lt;/p&gt;&#xA;&lt;h3 id=&#34;testing-code-blocks-for-future-posts&#34;&gt;testing code blocks for future posts&lt;/h3&gt;&#xA;&lt;p&gt;here&amp;rsquo;s a simple gradient descent snippet from last lecture notes in python:&lt;/p&gt;</description>
     </item>
   </channel>

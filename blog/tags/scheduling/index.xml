@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Scheduling on what i learned today</title>
-    <link>https://robertozanolli.github.io/blog/tags/scheduling/</link>
+    <link>http://localhost:1313/blog/tags/scheduling/</link>
     <description>Recent content in Scheduling on what i learned today</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 27 Nov 2025 22:15:30 +0100</lastBuildDate>
-    <atom:link href="https://robertozanolli.github.io/blog/tags/scheduling/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/tags/scheduling/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>relax</title>
-      <link>https://robertozanolli.github.io/blog/posts/relax/</link>
+      <link>http://localhost:1313/blog/posts/relax/</link>
       <pubDate>Thu, 27 Nov 2025 22:15:30 +0100</pubDate>
-      <guid>https://robertozanolli.github.io/blog/posts/relax/</guid>
+      <guid>http://localhost:1313/blog/posts/relax/</guid>
       <description>&lt;h1 id=&#34;time-to-recharge&#34;&gt;time to recharge&lt;/h1&gt;&#xA;&lt;p&gt;after weeks of intense work, it&amp;rsquo;s time to take a step back and relax.&lt;/p&gt;&#xA;&lt;p&gt;sometimes, the best way to recharge is to disconnect and enjoy the simple pleasures of life. whether it&amp;rsquo;s reading a good book, or simply spending time with loved ones.&lt;/p&gt;&#xA;&lt;h2 id=&#34;a-new-chapter-begins&#34;&gt;a new chapter begins&lt;/h2&gt;&#xA;&lt;p&gt;the past few months have been transformative.&#xA;i successfully defended my thesis and earned my bachelor&amp;rsquo;s degree, which felt like closing one chapter and immediately opening another. without much pause, i dove straight into my master&amp;rsquo;s degree in AI while continuing to work. it&amp;rsquo;s hard to balance both, but the passion for what i&amp;rsquo;m learning keeps me motivated.&lt;/p&gt;</description>
     </item>
   </channel>

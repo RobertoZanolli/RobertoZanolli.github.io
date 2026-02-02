@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tags - what i learned today</title>
         <link rel="icon" href="/images/favicon.ico" type="image/x-icon"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/styles.css">
         <script>
             window.MathJax = {
@@ -18,20 +21,25 @@
 
 </head>
 <body>
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">☾</button>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"></button>
 
     <main>
-        <nav>
-    <a href="/index.html">home</a>
-    <a href="/data-projects.html">work</a>
-    <a href="/quotes.html">quotes</a>
-    <a href="/blog/">blog</a>
-    <a href="https://www.linkedin.com/in/roberto-zanolli-2003-bo/" target="_blank" rel="noopener noreferrer">linkedin</a>
-    <a href="https://github.com/RobertoZanolli" target="_blank" rel="noopener noreferrer">github</a>
+        
+<button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+    <span class="bracket">[</span>
+    <span class="label">menu</span>
+    <span class="bracket">]</span>
+</button>
 
-    
-    <div class="nav-search">
-        <input id="post-search" class="post-search post-search--nav" type="search" placeholder="search..." aria-label="Search posts by title" autocomplete="off" />
+<nav class="curtain-nav" id="curtain-nav" aria-hidden="true">
+    <div class="curtain-nav-links">
+        <a href="/index.html">home</a>
+        <a href="/data-projects.html">work</a>
+        <a href="/enys.html">enys</a>
+        <a href="/quotes.html">quotes</a>
+        <a href="/blog/">blog</a>
+        <a href="https://www.linkedin.com/in/roberto-zanolli-2003-bo/" target="_blank" rel="noopener noreferrer">linkedin</a>
+        <a href="https://github.com/RobertoZanolli" target="_blank" rel="noopener noreferrer">github</a>
     </div>
 </nav>
 
@@ -52,7 +60,7 @@
     </article>
     
     <article class="blog-post-preview" data-title="planning">
-        <h2><a href="/blog/tags/planning/">planning</a></h2>
+        <h2><a href="/blog/tags/planning/">Planning</a></h2>
         <p class="post-meta">
             <time datetime="2025-12-12">december 12, 2025</time>
             
