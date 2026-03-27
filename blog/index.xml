@@ -2,45 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>what i learned today</title>
-    <link>http://localhost:1313/blog/</link>
+    <link>https://robertozanolli.github.io/blog/</link>
     <description>Recent content on what i learned today</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Dec 2025 14:45:04 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 Mar 2026 20:07:00 +0100</lastBuildDate>
+    <atom:link href="https://robertozanolli.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>building a neural network from scratch with keras</title>
+      <link>https://robertozanolli.github.io/blog/posts/neural-net-keras/</link>
+      <pubDate>Fri, 27 Mar 2026 20:07:00 +0100</pubDate>
+      <guid>https://robertozanolli.github.io/blog/posts/neural-net-keras/</guid>
+      <description>&lt;h1 id=&#34;building-a-neural-network-from-scratch-with-keras&#34;&gt;building a neural network from scratch with keras&lt;/h1&gt;&#xA;&lt;p&gt;after learning about decision trees and classical ml methods, i wanted to go deeper. neural networks always sounded intimidating, but once you break them down, the core idea is surprisingly elegant: a bunch of simple mathematical operations chained together, and somehow they learn to recognize patterns.&lt;/p&gt;&#xA;&lt;p&gt;this post is my attempt at building one from scratch (well, from keras) to classify handwritten digits using the famous mnist dataset. no fluff, just the essentials.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>planning intro</title>
-      <link>http://localhost:1313/blog/posts/planning-intro/</link>
+      <link>https://robertozanolli.github.io/blog/posts/planning-intro/</link>
       <pubDate>Fri, 12 Dec 2025 14:45:04 +0100</pubDate>
-      <guid>http://localhost:1313/blog/posts/planning-intro/</guid>
+      <guid>https://robertozanolli.github.io/blog/posts/planning-intro/</guid>
       <description>&lt;h1 id=&#34;planning-notes-offline-vs-online-and-why-deductive-planning-is-cool&#34;&gt;planning notes: offline vs online, and why deductive planning is cool&lt;/h1&gt;&#xA;&lt;p&gt;i recently started studying planning at college.&#xA;i did not expect it to feel this close to the way i think about programming: specify what you want, specify what operations are allowed, then search for a sequence that makes the world look like the goal.&lt;/p&gt;&#xA;&lt;p&gt;in this post i just want to write down the basics that helped me orient myself.&lt;/p&gt;</description>
     </item>
     <item>
       <title>relax</title>
-      <link>http://localhost:1313/blog/posts/relax/</link>
+      <link>https://robertozanolli.github.io/blog/posts/relax/</link>
       <pubDate>Thu, 27 Nov 2025 22:15:30 +0100</pubDate>
-      <guid>http://localhost:1313/blog/posts/relax/</guid>
+      <guid>https://robertozanolli.github.io/blog/posts/relax/</guid>
       <description>&lt;h1 id=&#34;time-to-recharge&#34;&gt;time to recharge&lt;/h1&gt;&#xA;&lt;p&gt;after weeks of intense work, it&amp;rsquo;s time to take a step back and relax.&lt;/p&gt;&#xA;&lt;p&gt;sometimes, the best way to recharge is to disconnect and enjoy the simple pleasures of life. whether it&amp;rsquo;s reading a good book, or simply spending time with loved ones.&lt;/p&gt;&#xA;&lt;h2 id=&#34;a-new-chapter-begins&#34;&gt;a new chapter begins&lt;/h2&gt;&#xA;&lt;p&gt;the past few months have been transformative.&#xA;i successfully defended my thesis and earned my bachelor&amp;rsquo;s degree, which felt like closing one chapter and immediately opening another. without much pause, i dove straight into my master&amp;rsquo;s degree in AI while continuing to work. it&amp;rsquo;s hard to balance both, but the passion for what i&amp;rsquo;m learning keeps me motivated.&lt;/p&gt;</description>
     </item>
     <item>
       <title>machine learning introduction</title>
-      <link>http://localhost:1313/blog/posts/ml-intro/</link>
+      <link>https://robertozanolli.github.io/blog/posts/ml-intro/</link>
       <pubDate>Tue, 28 Oct 2025 13:21:28 +0200</pubDate>
-      <guid>http://localhost:1313/blog/posts/ml-intro/</guid>
+      <guid>https://robertozanolli.github.io/blog/posts/ml-intro/</guid>
       <description>&lt;h1 id=&#34;decision-trees-and-classification-basics&#34;&gt;decision trees and classification basics&lt;/h1&gt;&#xA;&lt;p&gt;from the dirst lessons of my machine learning course, here are some key concepts about decision trees and classification methods.&#xA;between all the interesting subjects in this master, for now, ml seems to be my favorite.&lt;/p&gt;&#xA;&lt;h2 id=&#34;decision-trees-the-fundamentals&#34;&gt;decision trees: the fundamentals&lt;/h2&gt;&#xA;&lt;p&gt;decision trees work by recursively splitting data based on attribute values. the key question is: which attribute should we test first?&lt;/p&gt;&#xA;&lt;p&gt;this is where &lt;strong&gt;information gain ($IG$)&lt;/strong&gt; comes in. it measures how much a split reduces uncertainty about the class label.&lt;/p&gt;</description>
     </item>
     <item>
       <title>on social impact and digitalization</title>
-      <link>http://localhost:1313/blog/posts/thesis/</link>
+      <link>https://robertozanolli.github.io/blog/posts/thesis/</link>
       <pubDate>Mon, 20 Oct 2025 08:20:15 +0200</pubDate>
-      <guid>http://localhost:1313/blog/posts/thesis/</guid>
+      <guid>https://robertozanolli.github.io/blog/posts/thesis/</guid>
       <description>&lt;p&gt;finishing my thesis feels surreal after weeks researching articles and case studies. but more than that, it was about digging into the soul of a new kind of economy.&#xA;my research explored the digitalization of &lt;strong&gt;italian social enterprises&lt;/strong&gt;, framed by the beautiful principles of civil economy.&lt;/p&gt;&#xA;&lt;p&gt;civil economy emphasizes &lt;strong&gt;reciprocity&lt;/strong&gt;, &lt;strong&gt;trust&lt;/strong&gt;, and the &lt;strong&gt;common good&lt;/strong&gt;, values that seem at odds with the fast-paced, efficiency-driven world of digital tech. so i asked myself: &amp;ldquo;how can social enterprises embrace digital tools without losing their essence?&amp;rdquo;&lt;/p&gt;</description>
     </item>
     <item>
       <title>how do i feel?</title>
-      <link>http://localhost:1313/blog/posts/random-1/</link>
+      <link>https://robertozanolli.github.io/blog/posts/random-1/</link>
       <pubDate>Sun, 19 Oct 2025 00:09:04 +0200</pubDate>
-      <guid>http://localhost:1313/blog/posts/random-1/</guid>
+      <guid>https://robertozanolli.github.io/blog/posts/random-1/</guid>
       <description>&lt;h2 id=&#34;i-am-stressed-but-happy&#34;&gt;i am stressed but happy&lt;/h2&gt;&#xA;&lt;p&gt;just testing the blog system with something random.&lt;/p&gt;&#xA;&lt;p&gt;the title says it all i am stressed but happy.&lt;/p&gt;&#xA;&lt;p&gt;lots to do, but grateful i can do interesting stuff.&lt;/p&gt;&#xA;&lt;p&gt;studying for my master&amp;rsquo;s in AI, attending lectures, working at a nice startup, and writing my bachelor&amp;rsquo;s thesis on the side.&lt;/p&gt;&#xA;&lt;h3 id=&#34;testing-code-blocks-for-future-posts&#34;&gt;testing code blocks for future posts&lt;/h3&gt;&#xA;&lt;p&gt;here&amp;rsquo;s a simple gradient descent snippet from last lecture notes in python:&lt;/p&gt;</description>
     </item>
   </channel>

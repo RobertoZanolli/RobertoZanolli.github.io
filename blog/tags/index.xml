@@ -2,73 +2,101 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on what i learned today</title>
-    <link>http://localhost:1313/blog/tags/</link>
+    <link>https://robertozanolli.github.io/blog/tags/</link>
     <description>Recent content in Tags on what i learned today</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Dec 2025 14:45:04 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 Mar 2026 20:07:00 +0100</lastBuildDate>
+    <atom:link href="https://robertozanolli.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Ai</title>
-      <link>http://localhost:1313/blog/tags/ai/</link>
-      <pubDate>Fri, 12 Dec 2025 14:45:04 +0100</pubDate>
-      <guid>http://localhost:1313/blog/tags/ai/</guid>
+      <title>Deep Learning</title>
+      <link>https://robertozanolli.github.io/blog/tags/deep-learning/</link>
+      <pubDate>Fri, 27 Mar 2026 20:07:00 +0100</pubDate>
+      <guid>https://robertozanolli.github.io/blog/tags/deep-learning/</guid>
       <description></description>
     </item>
     <item>
-      <title>Planning</title>
-      <link>http://localhost:1313/blog/tags/planning/</link>
-      <pubDate>Fri, 12 Dec 2025 14:45:04 +0100</pubDate>
-      <guid>http://localhost:1313/blog/tags/planning/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Memes</title>
-      <link>http://localhost:1313/blog/tags/memes/</link>
-      <pubDate>Thu, 27 Nov 2025 22:15:30 +0100</pubDate>
-      <guid>http://localhost:1313/blog/tags/memes/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Personal</title>
-      <link>http://localhost:1313/blog/tags/personal/</link>
-      <pubDate>Thu, 27 Nov 2025 22:15:30 +0100</pubDate>
-      <guid>http://localhost:1313/blog/tags/personal/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Scheduling</title>
-      <link>http://localhost:1313/blog/tags/scheduling/</link>
-      <pubDate>Thu, 27 Nov 2025 22:15:30 +0100</pubDate>
-      <guid>http://localhost:1313/blog/tags/scheduling/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Travel</title>
-      <link>http://localhost:1313/blog/tags/travel/</link>
-      <pubDate>Thu, 27 Nov 2025 22:15:30 +0100</pubDate>
-      <guid>http://localhost:1313/blog/tags/travel/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Data Science</title>
-      <link>http://localhost:1313/blog/tags/data-science/</link>
-      <pubDate>Tue, 28 Oct 2025 13:21:28 +0200</pubDate>
-      <guid>http://localhost:1313/blog/tags/data-science/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Decision Trees</title>
-      <link>http://localhost:1313/blog/tags/decision-trees/</link>
-      <pubDate>Tue, 28 Oct 2025 13:21:28 +0200</pubDate>
-      <guid>http://localhost:1313/blog/tags/decision-trees/</guid>
+      <title>Keras</title>
+      <link>https://robertozanolli.github.io/blog/tags/keras/</link>
+      <pubDate>Fri, 27 Mar 2026 20:07:00 +0100</pubDate>
+      <guid>https://robertozanolli.github.io/blog/tags/keras/</guid>
       <description></description>
     </item>
     <item>
       <title>Ml</title>
-      <link>http://localhost:1313/blog/tags/ml/</link>
+      <link>https://robertozanolli.github.io/blog/tags/ml/</link>
+      <pubDate>Fri, 27 Mar 2026 20:07:00 +0100</pubDate>
+      <guid>https://robertozanolli.github.io/blog/tags/ml/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Neural Networks</title>
+      <link>https://robertozanolli.github.io/blog/tags/neural-networks/</link>
+      <pubDate>Fri, 27 Mar 2026 20:07:00 +0100</pubDate>
+      <guid>https://robertozanolli.github.io/blog/tags/neural-networks/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://robertozanolli.github.io/blog/tags/python/</link>
+      <pubDate>Fri, 27 Mar 2026 20:07:00 +0100</pubDate>
+      <guid>https://robertozanolli.github.io/blog/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ai</title>
+      <link>https://robertozanolli.github.io/blog/tags/ai/</link>
+      <pubDate>Fri, 12 Dec 2025 14:45:04 +0100</pubDate>
+      <guid>https://robertozanolli.github.io/blog/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Planning</title>
+      <link>https://robertozanolli.github.io/blog/tags/planning/</link>
+      <pubDate>Fri, 12 Dec 2025 14:45:04 +0100</pubDate>
+      <guid>https://robertozanolli.github.io/blog/tags/planning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Memes</title>
+      <link>https://robertozanolli.github.io/blog/tags/memes/</link>
+      <pubDate>Thu, 27 Nov 2025 22:15:30 +0100</pubDate>
+      <guid>https://robertozanolli.github.io/blog/tags/memes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Personal</title>
+      <link>https://robertozanolli.github.io/blog/tags/personal/</link>
+      <pubDate>Thu, 27 Nov 2025 22:15:30 +0100</pubDate>
+      <guid>https://robertozanolli.github.io/blog/tags/personal/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Scheduling</title>
+      <link>https://robertozanolli.github.io/blog/tags/scheduling/</link>
+      <pubDate>Thu, 27 Nov 2025 22:15:30 +0100</pubDate>
+      <guid>https://robertozanolli.github.io/blog/tags/scheduling/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Travel</title>
+      <link>https://robertozanolli.github.io/blog/tags/travel/</link>
+      <pubDate>Thu, 27 Nov 2025 22:15:30 +0100</pubDate>
+      <guid>https://robertozanolli.github.io/blog/tags/travel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Science</title>
+      <link>https://robertozanolli.github.io/blog/tags/data-science/</link>
       <pubDate>Tue, 28 Oct 2025 13:21:28 +0200</pubDate>
-      <guid>http://localhost:1313/blog/tags/ml/</guid>
+      <guid>https://robertozanolli.github.io/blog/tags/data-science/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Decision Trees</title>
+      <link>https://robertozanolli.github.io/blog/tags/decision-trees/</link>
+      <pubDate>Tue, 28 Oct 2025 13:21:28 +0200</pubDate>
+      <guid>https://robertozanolli.github.io/blog/tags/decision-trees/</guid>
       <description></description>
     </item>
   </channel>

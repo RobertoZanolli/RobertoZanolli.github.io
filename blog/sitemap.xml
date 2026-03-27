@@ -2,55 +2,70 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/blog/tags/ai/</loc>
+    <loc>https://robertozanolli.github.io/blog/posts/neural-net-keras/</loc>
+    <lastmod>2026-03-27T20:07:00+01:00</lastmod>
+  </url><url>
+    <loc>https://robertozanolli.github.io/blog/tags/deep-learning/</loc>
+    <lastmod>2026-03-27T20:07:00+01:00</lastmod>
+  </url><url>
+    <loc>https://robertozanolli.github.io/blog/tags/keras/</loc>
+    <lastmod>2026-03-27T20:07:00+01:00</lastmod>
+  </url><url>
+    <loc>https://robertozanolli.github.io/blog/tags/ml/</loc>
+    <lastmod>2026-03-27T20:07:00+01:00</lastmod>
+  </url><url>
+    <loc>https://robertozanolli.github.io/blog/tags/neural-networks/</loc>
+    <lastmod>2026-03-27T20:07:00+01:00</lastmod>
+  </url><url>
+    <loc>https://robertozanolli.github.io/blog/posts/</loc>
+    <lastmod>2026-03-27T20:07:00+01:00</lastmod>
+  </url><url>
+    <loc>https://robertozanolli.github.io/blog/tags/python/</loc>
+    <lastmod>2026-03-27T20:07:00+01:00</lastmod>
+  </url><url>
+    <loc>https://robertozanolli.github.io/blog/tags/</loc>
+    <lastmod>2026-03-27T20:07:00+01:00</lastmod>
+  </url><url>
+    <loc>https://robertozanolli.github.io/blog/</loc>
+    <lastmod>2026-03-27T20:07:00+01:00</lastmod>
+  </url><url>
+    <loc>https://robertozanolli.github.io/blog/tags/ai/</loc>
     <lastmod>2025-12-12T14:45:04+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/tags/planning/</loc>
+    <loc>https://robertozanolli.github.io/blog/tags/planning/</loc>
     <lastmod>2025-12-12T14:45:04+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/posts/planning-intro/</loc>
+    <loc>https://robertozanolli.github.io/blog/posts/planning-intro/</loc>
     <lastmod>2025-12-12T14:45:04+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/posts/</loc>
-    <lastmod>2025-12-12T14:45:04+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/blog/tags/</loc>
-    <lastmod>2025-12-12T14:45:04+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/blog/</loc>
-    <lastmod>2025-12-12T14:45:04+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/blog/tags/memes/</loc>
+    <loc>https://robertozanolli.github.io/blog/tags/memes/</loc>
     <lastmod>2025-11-27T22:15:30+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/tags/personal/</loc>
+    <loc>https://robertozanolli.github.io/blog/tags/personal/</loc>
     <lastmod>2025-11-27T22:15:30+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/posts/relax/</loc>
+    <loc>https://robertozanolli.github.io/blog/posts/relax/</loc>
     <lastmod>2025-11-27T22:15:30+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/tags/scheduling/</loc>
+    <loc>https://robertozanolli.github.io/blog/tags/scheduling/</loc>
     <lastmod>2025-11-27T22:15:30+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/tags/travel/</loc>
+    <loc>https://robertozanolli.github.io/blog/tags/travel/</loc>
     <lastmod>2025-11-27T22:15:30+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/tags/data-science/</loc>
+    <loc>https://robertozanolli.github.io/blog/tags/data-science/</loc>
     <lastmod>2025-10-28T13:21:28+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/tags/decision-trees/</loc>
+    <loc>https://robertozanolli.github.io/blog/tags/decision-trees/</loc>
     <lastmod>2025-10-28T13:21:28+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/posts/ml-intro/</loc>
+    <loc>https://robertozanolli.github.io/blog/posts/ml-intro/</loc>
     <lastmod>2025-10-28T13:21:28+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/tags/ml/</loc>
-    <lastmod>2025-10-28T13:21:28+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/blog/posts/thesis/</loc>
+    <loc>https://robertozanolli.github.io/blog/posts/thesis/</loc>
     <lastmod>2025-10-20T08:20:15+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/posts/random-1/</loc>
+    <loc>https://robertozanolli.github.io/blog/posts/random-1/</loc>
     <lastmod>2025-10-19T00:09:04+02:00</lastmod>
   </url>
 </urlset>

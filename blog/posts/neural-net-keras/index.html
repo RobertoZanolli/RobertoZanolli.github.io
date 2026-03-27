@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>building a neural network from scratch with keras - what i learned today</title>
+        <link rel="icon" href="/images/favicon.ico" type="image/x-icon"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/styles.css">
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$'], ['\\(', '\\)']],
+                    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+                }
+            };
+        </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"></button>
+
+    <main>
+        
+<button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+    <span class="bracket">[</span>
+    <span class="label">menu</span>
+    <span class="bracket">]</span>
+</button>
+
+<nav class="curtain-nav" id="curtain-nav" aria-hidden="true">
+    <div class="curtain-nav-links">
+        <a href="/index.html">home</a>
+        <a href="/data-projects.html">work</a>
+        <a href="/enys.html">enys</a>
+        <a href="/quotes.html">quotes</a>
+        <a href="/blog/">blog</a>
+        <a href="https://www.linkedin.com/in/roberto-zanolli-2003-bo/" target="_blank" rel="noopener noreferrer">linkedin</a>
+        <a href="https://github.com/RobertoZanolli" target="_blank" rel="noopener noreferrer">github</a>
+    </div>
+</nav>
+
+        
+<article class="blog-post">
+    <header class="post-header">
+        <h1>building a neural network from scratch with keras</h1>
+        <p class="post-meta">
+            <time datetime="2026-03-27">march 27, 2026</time>
+            
+            <span class="post-tags">
+                
+                <span class="tag">ml</span>
+                
+                <span class="tag">deep learning</span>
+                
+                <span class="tag">keras</span>
+                
+                <span class="tag">neural networks</span>
+                
+                <span class="tag">python</span>
+                
+            </span>
+            
+        </p>
+    </header>
+    
+    <div class="post-content">
+        <h1 id="building-a-neural-network-from-scratch-with-keras">building a neural network from scratch with keras</h1>
+<p>after learning about decision trees and classical ml methods, i wanted to go deeper. neural networks always sounded intimidating, but once you break them down, the core idea is surprisingly elegant: a bunch of simple mathematical operations chained together, and somehow they learn to recognize patterns.</p>
+<p>this post is my attempt at building one from scratch (well, from keras) to classify handwritten digits using the famous mnist dataset. no fluff, just the essentials.</p>
+<h2 id="what-even-is-a-neural-network">what even is a neural network</h2>
+<p>a neural network is a function approximator. you give it inputs, it transforms them through a series of layers, and it produces outputs. the magic is in how it <strong>learns</strong> which transformations to apply.</p>
+<p>the basic building block is the <strong>neuron</strong> (or unit). a neuron takes inputs, multiplies them by weights, adds a bias, and passes the result through an activation function:</p>
+<p>$$z = \sum_{i} w_i x_i + b$$</p>
+<p>$$a = f(z)$$</p>
+<p>where $w_i$ are the weights, $b$ is the bias, and $f$ is the activation function.</p>
+<p>stack a bunch of these neurons together in layers, connect the layers, and you have a neural network.</p>
+<h2 id="the-mnist-dataset">the mnist dataset</h2>
+<p>mnist is the &ldquo;hello world&rdquo; of deep learning. it contains 70,000 grayscale images of handwritten digits (0-9), each 28x28 pixels. the goal: given an image, predict which digit it represents.</p>
+<p>it&rsquo;s perfect for learning because:</p>
+<ul>
+<li>the inputs are small (28x28 = 784 pixels)</li>
+<li>the task is well-defined (10 classes)</li>
+<li>it&rsquo;s already cleaned and normalized</li>
+</ul>
+<h2 id="activation-functions-the-nonlinear-magic">activation functions: the nonlinear magic</h2>
+<p>without activation functions, a neural network would just be a linear model, no matter how many layers you stack. the activation is what introduces <strong>nonlinearity</strong>, allowing the network to learn complex patterns.</p>
+<p>the two we&rsquo;ll use:</p>
+<p><strong>relu</strong> (rectified linear unit):</p>
+<p>$$f(x) = \max(0, x)$$</p>
+<p>simple, fast, and works incredibly well for hidden layers. if the input is negative, it outputs 0. otherwise, it passes the input through unchanged.</p>
+<p><strong>softmax</strong> (for the output layer):</p>
+<p>$$\sigma(z_i) = \frac{e^{z_i}}{\sum_{j} e^{z_j}}$$</p>
+<p>softmax converts raw scores (logits) into probabilities that sum to 1. perfect for multi-class classification.</p>
+<h2 id="loss-function-how-wrong-are-we">loss function: how wrong are we</h2>
+<p>to learn, the network needs a measure of how wrong its predictions are. for classification, the standard choice is <strong>categorical cross-entropy</strong>:</p>
+<p>$$L = -\sum_{c=1}^{C} y_c \log(\hat{y}_c)$$</p>
+<p>where $y_c$ is the true label (one-hot encoded) and $\hat{y}_c$ is the predicted probability for class $c$.</p>
+<p>the lower the loss, the closer the predictions are to the true labels. the training process (backpropagation + gradient descent) adjusts the weights to minimize this loss over time.</p>
+<h2 id="building-it-with-keras">building it with keras</h2>
+<p>enough theory, let&rsquo;s write some code. we&rsquo;ll use <strong>tensorflow/keras</strong> because it makes building neural networks almost trivial while still letting you understand what&rsquo;s happening.</p>
+<h3 id="step-1-imports-and-data-loading">step 1: imports and data loading</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#fb660a;font-weight:bold">import</span> numpy <span style="color:#fb660a;font-weight:bold">as</span> np
+</span></span><span style="display:flex;"><span><span style="color:#fb660a;font-weight:bold">import</span> matplotlib.pyplot <span style="color:#fb660a;font-weight:bold">as</span> plt
+</span></span><span style="display:flex;"><span><span style="color:#fb660a;font-weight:bold">from</span> tensorflow.keras.datasets <span style="color:#fb660a;font-weight:bold">import</span> mnist
+</span></span><span style="display:flex;"><span><span style="color:#fb660a;font-weight:bold">from</span> tensorflow.keras.models <span style="color:#fb660a;font-weight:bold">import</span> Sequential
+</span></span><span style="display:flex;"><span><span style="color:#fb660a;font-weight:bold">from</span> tensorflow.keras.layers <span style="color:#fb660a;font-weight:bold">import</span> Dense, Flatten
+</span></span><span style="display:flex;"><span><span style="color:#fb660a;font-weight:bold">from</span> tensorflow.keras.utils <span style="color:#fb660a;font-weight:bold">import</span> to_categorical
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic"># load the data (already split into train/test)</span>
+</span></span><span style="display:flex;"><span>(x_train, y_train), (x_test, y_test) = mnist.load_data()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic"># normalize pixel values to [0, 1]</span>
+</span></span><span style="display:flex;"><span>x_train = x_train.astype(<span style="color:#0086d2">&#34;float32&#34;</span>) / <span style="color:#0086f7;font-weight:bold">255.0</span>
+</span></span><span style="display:flex;"><span>x_test = x_test.astype(<span style="color:#0086d2">&#34;float32&#34;</span>) / <span style="color:#0086f7;font-weight:bold">255.0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic"># one-hot encode the labels</span>
+</span></span><span style="display:flex;"><span>y_train = to_categorical(y_train, <span style="color:#0086f7;font-weight:bold">10</span>)
+</span></span><span style="display:flex;"><span>y_test = to_categorical(y_test, <span style="color:#0086f7;font-weight:bold">10</span>)
+</span></span></code></pre></div><p>normalization matters because neural networks work better with small input values. dividing by 255 (the max pixel value) maps everything to the [0, 1] range.</p>
+<p>one-hot encoding turns a label like <code>3</code> into <code>[0, 0, 0, 1, 0, 0, 0, 0, 0, 0]</code>. this is what softmax expects to compare against.</p>
+<h3 id="step-2-define-the-model">step 2: define the model</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model = Sequential([
+</span></span><span style="display:flex;"><span>    Flatten(input_shape=(<span style="color:#0086f7;font-weight:bold">28</span>, <span style="color:#0086f7;font-weight:bold">28</span>)),  <span style="color:#080;background-color:#0f140f;font-style:italic"># 28x28 image -&gt; 784 flat vector</span>
+</span></span><span style="display:flex;"><span>    Dense(<span style="color:#0086f7;font-weight:bold">128</span>, activation=<span style="color:#0086d2">&#34;relu&#34;</span>),  <span style="color:#080;background-color:#0f140f;font-style:italic"># hidden layer: 128 neurons</span>
+</span></span><span style="display:flex;"><span>    Dense(<span style="color:#0086f7;font-weight:bold">64</span>, activation=<span style="color:#0086d2">&#34;relu&#34;</span>),   <span style="color:#080;background-color:#0f140f;font-style:italic"># hidden layer: 64 neurons</span>
+</span></span><span style="display:flex;"><span>    Dense(<span style="color:#0086f7;font-weight:bold">10</span>, activation=<span style="color:#0086d2">&#34;softmax&#34;</span>) <span style="color:#080;background-color:#0f140f;font-style:italic"># output layer: 10 classes</span>
+</span></span><span style="display:flex;"><span>])
+</span></span></code></pre></div><p>here&rsquo;s what each layer does:</p>
+<ul>
+<li><strong>flatten</strong>: converts the 2d image (28x28) into a 1d vector (784). this is needed because dense layers expect flat input.</li>
+<li><strong>dense(128, relu)</strong>: a fully connected layer with 128 neurons. each neuron connects to all 784 inputs. relu keeps things nonlinear.</li>
+<li><strong>dense(64, relu)</strong>: a second hidden layer with 64 neurons. this progressively compresses the representation.</li>
+<li><strong>dense(10, softmax)</strong>: the output layer. 10 neurons, one per digit. softmax gives us a probability distribution.</li>
+</ul>
+<h3 id="step-3-compile-and-train">step 3: compile and train</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model.compile(
+</span></span><span style="display:flex;"><span>    optimizer=<span style="color:#0086d2">&#34;adam&#34;</span>,
+</span></span><span style="display:flex;"><span>    loss=<span style="color:#0086d2">&#34;categorical_crossentropy&#34;</span>,
+</span></span><span style="display:flex;"><span>    metrics=[<span style="color:#0086d2">&#34;accuracy&#34;</span>]
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>history = model.fit(
+</span></span><span style="display:flex;"><span>    x_train, y_train,
+</span></span><span style="display:flex;"><span>    epochs=<span style="color:#0086f7;font-weight:bold">10</span>,
+</span></span><span style="display:flex;"><span>    batch_size=<span style="color:#0086f7;font-weight:bold">32</span>,
+</span></span><span style="display:flex;"><span>    validation_split=<span style="color:#0086f7;font-weight:bold">0.2</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>a few notes on the choices:</p>
+<ul>
+<li><strong>adam</strong> optimizer: an adaptive learning rate optimizer. it&rsquo;s the go-to default because it just works well out of the box.</li>
+<li><strong>batch_size=32</strong>: the network processes 32 images at a time before updating weights. smaller batches = more updates = potentially faster learning.</li>
+<li><strong>validation_split=0.2</strong>: reserves 20% of training data to monitor performance on unseen data during training.</li>
+</ul>
+<h3 id="step-4-evaluate-and-visualize">step 4: evaluate and visualize</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic"># evaluate on test set</span>
+</span></span><span style="display:flex;"><span>test_loss, test_acc = model.evaluate(x_test, y_test)
+</span></span><span style="display:flex;"><span>print(<span style="color:#0086d2">f</span><span style="color:#0086d2">&#34;test accuracy: </span><span style="color:#0086d2">{</span>test_acc<span style="color:#0086d2">:</span><span style="color:#0086d2">.4f</span><span style="color:#0086d2">}</span><span style="color:#0086d2">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic"># plot training history</span>
+</span></span><span style="display:flex;"><span>plt.figure(figsize=(<span style="color:#0086f7;font-weight:bold">12</span>, <span style="color:#0086f7;font-weight:bold">4</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt.subplot(<span style="color:#0086f7;font-weight:bold">1</span>, <span style="color:#0086f7;font-weight:bold">2</span>, <span style="color:#0086f7;font-weight:bold">1</span>)
+</span></span><span style="display:flex;"><span>plt.plot(history.history[<span style="color:#0086d2">&#34;accuracy&#34;</span>], label=<span style="color:#0086d2">&#34;train accuracy&#34;</span>)
+</span></span><span style="display:flex;"><span>plt.plot(history.history[<span style="color:#0086d2">&#34;val_accuracy&#34;</span>], label=<span style="color:#0086d2">&#34;val accuracy&#34;</span>)
+</span></span><span style="display:flex;"><span>plt.xlabel(<span style="color:#0086d2">&#34;epoch&#34;</span>)
+</span></span><span style="display:flex;"><span>plt.ylabel(<span style="color:#0086d2">&#34;accuracy&#34;</span>)
+</span></span><span style="display:flex;"><span>plt.legend()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt.subplot(<span style="color:#0086f7;font-weight:bold">1</span>, <span style="color:#0086f7;font-weight:bold">2</span>, <span style="color:#0086f7;font-weight:bold">2</span>)
+</span></span><span style="display:flex;"><span>plt.plot(history.history[<span style="color:#0086d2">&#34;loss&#34;</span>], label=<span style="color:#0086d2">&#34;train loss&#34;</span>)
+</span></span><span style="display:flex;"><span>plt.plot(history.history[<span style="color:#0086d2">&#34;val_loss&#34;</span>], label=<span style="color:#0086d2">&#34;val loss&#34;</span>)
+</span></span><span style="display:flex;"><span>plt.xlabel(<span style="color:#0086d2">&#34;epoch&#34;</span>)
+</span></span><span style="display:flex;"><span>plt.ylabel(<span style="color:#0086d2">&#34;loss&#34;</span>)
+</span></span><span style="display:flex;"><span>plt.legend()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt.tight_layout()
+</span></span><span style="display:flex;"><span>plt.savefig(<span style="color:#0086d2">&#34;training_curves.png&#34;</span>, dpi=<span style="color:#0086f7;font-weight:bold">150</span>)
+</span></span><span style="display:flex;"><span>plt.show()
+</span></span></code></pre></div><p>you should expect around <strong>97-98% accuracy</strong> on the test set with this simple architecture. not bad for a few lines of code.</p>
+<h3 id="step-5-make-predictions">step 5: make predictions</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic"># predict on a single image</span>
+</span></span><span style="display:flex;"><span>predictions = model.predict(x_test)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;background-color:#0f140f;font-style:italic"># show a few predictions</span>
+</span></span><span style="display:flex;"><span><span style="color:#fb660a;font-weight:bold">for</span> i in range(<span style="color:#0086f7;font-weight:bold">5</span>):
+</span></span><span style="display:flex;"><span>    predicted_label = np.argmax(predictions[i])
+</span></span><span style="display:flex;"><span>    true_label = np.argmax(y_test[i])
+</span></span><span style="display:flex;"><span>    print(<span style="color:#0086d2">f</span><span style="color:#0086d2">&#34;predicted: </span><span style="color:#0086d2">{</span>predicted_label<span style="color:#0086d2">}</span><span style="color:#0086d2">, actual: </span><span style="color:#0086d2">{</span>true_label<span style="color:#0086d2">}</span><span style="color:#0086d2">&#34;</span>)
+</span></span></code></pre></div><h2 id="what-i-learned">what i learned</h2>
+<p>building this network taught me a few things:</p>
+<ul>
+<li>neural networks are not black magic. each layer does something simple (multiply, add, activate), and the complexity comes from stacking many of them together.</li>
+<li>keras makes the implementation almost trivial, but understanding what each piece does is what makes the difference between &ldquo;it works&rdquo; and &ldquo;i know why it works&rdquo;.</li>
+<li>the architecture choices (number of layers, neurons, activation functions) are where the art is. this simple network works well for mnist, but more complex tasks need more thoughtful design.</li>
+</ul>
+<p>this is just the beginning. next steps would be convolutional layers (cnns) for image tasks, which learn spatial patterns instead of treating every pixel independently. but that&rsquo;s a post for another day.</p>
+
+    </div>
+</article>
+
+<div style="margin-top: 3em; padding-top: 2em; border-top: 1px solid var(--border-color);">
+    <a href="/blog/">← back to blog</a>
+</div>
+
+    </main>
+
+    <footer>
+        &copy; 2025 roberto zanolli | all rights reserved.
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>

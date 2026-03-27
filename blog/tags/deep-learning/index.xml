@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Deep Learning on what i learned today</title>
+    <link>https://robertozanolli.github.io/blog/tags/deep-learning/</link>
+    <description>Recent content in Deep Learning on what i learned today</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 27 Mar 2026 20:07:00 +0100</lastBuildDate>
+    <atom:link href="https://robertozanolli.github.io/blog/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>building a neural network from scratch with keras</title>
+      <link>https://robertozanolli.github.io/blog/posts/neural-net-keras/</link>
+      <pubDate>Fri, 27 Mar 2026 20:07:00 +0100</pubDate>
+      <guid>https://robertozanolli.github.io/blog/posts/neural-net-keras/</guid>
+      <description>&lt;h1 id=&#34;building-a-neural-network-from-scratch-with-keras&#34;&gt;building a neural network from scratch with keras&lt;/h1&gt;&#xA;&lt;p&gt;after learning about decision trees and classical ml methods, i wanted to go deeper. neural networks always sounded intimidating, but once you break them down, the core idea is surprisingly elegant: a bunch of simple mathematical operations chained together, and somehow they learn to recognize patterns.&lt;/p&gt;&#xA;&lt;p&gt;this post is my attempt at building one from scratch (well, from keras) to classify handwritten digits using the famous mnist dataset. no fluff, just the essentials.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
